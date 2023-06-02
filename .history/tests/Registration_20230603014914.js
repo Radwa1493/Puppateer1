@@ -11,8 +11,7 @@ describe('Registraion Scenario ', () => {
         const page = await browser.newPage(); // open new tab
         await page.setViewport({ width: 1266, height: 768}); // set screen size
         await page.goto('https://www.moebel-kraft.de/'); // navigate to url 
-
-
+await page.waitForXPath
         const title = await page.title() // get title
 
         console.log("Page title is : "+title)

@@ -1,7 +1,6 @@
 const puppeteer = require('puppeteer');
 const expect = require('chai').expect
 
-//const Str = require('@supercharge/strings')
 
 describe('Registraion Scenario ', () => {
 
@@ -20,7 +19,7 @@ describe('Registraion Scenario ', () => {
         await page.click(".headerElement__icon--login") ;
         await page.waitForTimeout(2000)
         await page.type('#loginEmail','ccjss@ccjss.com')
-        expect(title).to.be.a('Möbelhaus Kraft - Möbel und Dekorationen für ein schöneres Zuhause');
+        expect(title).to.be.a('string','Möbelhaus Kraft - Möbel und Dekorationen für ein schöneres Zuhause')
 
 
     })

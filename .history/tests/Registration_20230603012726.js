@@ -1,5 +1,5 @@
 const puppeteer = require('puppeteer');
-const expect = require('chai').expect
+const puppeteer = require('chai').expect
 
 const Str = require('@supercharge/strings')
 
@@ -12,11 +12,10 @@ describe('Registraion Scenario ', () => {
         await page.setViewport({ width: 1266, height: 768}); // set screen size
         await page.goto('https://www.moebel-kraft.de/'); // navigate to url 
 
-
         const title = await page.title() // get title
 
         console.log("Page title is : "+title)
-        expect(title).to.be.a('Möbelhaus Kraft - Möbel und Dekorationen für ein schöneres Zuhause');
+        expect(title).to.be.a('','')
         await page.click("div.consentForm__acceptButton:nth-child(2) > button") ;
         await page.click(".headerElement__icon--login") ;
         await page.waitForTimeout(2000)

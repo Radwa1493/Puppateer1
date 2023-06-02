@@ -20,7 +20,7 @@ describe('Registraion Scenario ', () => {
         await page.click(".headerElement__icon--login") ;
         await page.waitForTimeout(2000)
         await page.type('#loginEmail','ccjss@ccjss.com')
-        expect(title).to.be.a('Möbelhaus Kraft - Möbel und Dekorationen für ein schöneres Zuhause');
+        expect(title).to..to.be.a('string','zMöbelhaus Kraft - Möbel und Dekorationen für ein schöneres Zuhause');
 
 
     })
