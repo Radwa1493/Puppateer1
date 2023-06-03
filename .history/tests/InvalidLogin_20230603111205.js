@@ -27,7 +27,7 @@ let page
     
         await page.setViewport({ width: 1266, height: 768}); // set screen size
         await page.goto('https://www.moebel-kraft.de/'); // navigate to url 
-        await page.waitForTimeout(2000)
+        await page.waitForTimeout(12000)
 
         const title = await page.title() // get title
 

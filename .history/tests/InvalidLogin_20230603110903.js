@@ -32,7 +32,7 @@ let page
         const title = await page.title() // get title
 
         console.log("Page title is : "+title)
-       // expect(title).to.be.a('Möbelhaus Kraft - Möbel und Dekorationen für ein schöneres Zuhause');
+        expect(title).to.be.a('Möbelhaus Kraft - Möbel und Dekorationen für ein schöneres Zuhause');
 
         await page.click("div.consentForm__acceptButton:nth-child(2) > button") ;
         await page.click(".headerElement__icon--login") ;

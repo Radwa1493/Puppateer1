@@ -86,8 +86,8 @@ describe('Registraion Scenario ', () => {
         await page.click("div.accountNew__newsletterCheckbox > div > div > span.checkbox__checkbox.checkbox__checkbox--alignTop") ;
         await page.click("div.accountNew__agbCheckbox > div > div > span.checkbox__checkbox.checkbox__checkbox--alignTop") ;
         await page.click("#register-submit") ;
-   //     await page.waitFor(()=>!document.querySelector(CSS))
-   await page.waitForSelector('CSS',{hidden:true,timeout:3000})
+        await page
+
   //      element = await page.waitForSelector("[sc-ebzWDT igyUpb]");
   //      title = await page.evaluate(element => element.textContent, element);     //   await page.close()
 
