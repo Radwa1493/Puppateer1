@@ -1,0 +1,54 @@
+{
+    "sourceFile": "package.json",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 9,
+            "patches": [
+                {
+                    "date": 1685709883824,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1685709925177,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,9 +3,9 @@\n   \"version\": \"1.0.0\",\n   \"description\": \"Automation Software testing \",\n   \"main\": \"index.js\",\n   \"scripts\": {\n-    \"test\": \"\\\"Error: no test specified\\\" && exit 1\"\n+    \"test\": \".\\\"\n   },\n   \"keywords\": [\n     \"Puppeteer\",\n     \"Mocha\",\n"
+                },
+                {
+                    "date": 1685709931047,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,9 +3,9 @@\n   \"version\": \"1.0.0\",\n   \"description\": \"Automation Software testing \",\n   \"main\": \"index.js\",\n   \"scripts\": {\n-    \"test\": \".\\\"\n+    \"test\": \".\\node_modules\\mocha\\bin/_mocha\"\n   },\n   \"keywords\": [\n     \"Puppeteer\",\n     \"Mocha\",\n"
+                },
+                {
+                    "date": 1685709963649,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,9 +3,9 @@\n   \"version\": \"1.0.0\",\n   \"description\": \"Automation Software testing \",\n   \"main\": \"index.js\",\n   \"scripts\": {\n-    \"test\": \".\\node_modules\\mocha\\bin/_mocha\"\n+    \"test\": \"./node_modules\\mocha\\bin/mocha\"\n   },\n   \"keywords\": [\n     \"Puppeteer\",\n     \"Mocha\",\n"
+                },
+                {
+                    "date": 1685709969589,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,9 +3,9 @@\n   \"version\": \"1.0.0\",\n   \"description\": \"Automation Software testing \",\n   \"main\": \"index.js\",\n   \"scripts\": {\n-    \"test\": \"./node_modules\\mocha\\bin/mocha\"\n+    \"test\": \"./node_modules/mocha/bin/mocha\"\n   },\n   \"keywords\": [\n     \"Puppeteer\",\n     \"Mocha\",\n"
+                },
+                {
+                    "date": 1685709979110,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,9 +3,9 @@\n   \"version\": \"1.0.0\",\n   \"description\": \"Automation Software testing \",\n   \"main\": \"index.js\",\n   \"scripts\": {\n-    \"test\": \"./node_modules/mocha/bin/mocha\"\n+    \"test\": \"./node_modules/mocha/bin/mocha --\"\n   },\n   \"keywords\": [\n     \"Puppeteer\",\n     \"Mocha\",\n"
+                },
+                {
+                    "date": 1685709984422,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,9 +3,9 @@\n   \"version\": \"1.0.0\",\n   \"description\": \"Automation Software testing \",\n   \"main\": \"index.js\",\n   \"scripts\": {\n-    \"test\": \"./node_modules/mocha/bin/mocha --\"\n+    \"test\": \"./node_modules/mocha/bin/mocha --timeout\"\n   },\n   \"keywords\": [\n     \"Puppeteer\",\n     \"Mocha\",\n"
+                },
+                {
+                    "date": 1685709990232,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,9 +3,9 @@\n   \"version\": \"1.0.0\",\n   \"description\": \"Automation Software testing \",\n   \"main\": \"index.js\",\n   \"scripts\": {\n-    \"test\": \"./node_modules/mocha/bin/mocha --timeout\"\n+    \"test\": \"./node_modules/mocha/bin/mocha --timeout=3000 .\"\n   },\n   \"keywords\": [\n     \"Puppeteer\",\n     \"Mocha\",\n"
+                },
+                {
+                    "date": 1685710008041,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,9 +3,9 @@\n   \"version\": \"1.0.0\",\n   \"description\": \"Automation Software testing \",\n   \"main\": \"index.js\",\n   \"scripts\": {\n-    \"test\": \"./node_modules/mocha/bin/mocha --timeout=3000 .\"\n+    \"test\": \"./node_modules/mocha/bin/mocha --timeout=3000 ./est\"\n   },\n   \"keywords\": [\n     \"Puppeteer\",\n     \"Mocha\",\n"
+                },
+                {
+                    "date": 1685710014199,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,9 +3,9 @@\n   \"version\": \"1.0.0\",\n   \"description\": \"Automation Software testing \",\n   \"main\": \"index.js\",\n   \"scripts\": {\n-    \"test\": \"./node_modules/mocha/bin/mocha --timeout=3000 ./test\"\n+    \"test\": \"./node_modules/mocha/bin/mocha --timeout=3000 ./tests\"\n   },\n   \"keywords\": [\n     \"Puppeteer\",\n     \"Mocha\",\n"
+                }
+            ],
+            "date": 1685709883824,
+            "name": "Commit-0",
+            "content": "{\n  \"name\": \"puppeteer_p1\",\n  \"version\": \"1.0.0\",\n  \"description\": \"Automation Software testing \",\n  \"main\": \"index.js\",\n  \"scripts\": {\n    \"test\": \"\\\"Error: no test specified\\\" && exit 1\"\n  },\n  \"keywords\": [\n    \"Puppeteer\",\n    \"Mocha\",\n    \"Chai\",\n    \"Automation\"\n  ],\n  \"author\": \"Radwa\",\n  \"license\": \"ISC\",\n  \"devDependencies\": {\n    \"chai\": \"^4.3.7\",\n    \"mocha\": \"^10.2.0\",\n    \"prettier\": \"^2.8.8\"\n  }\n}\n"
+        }
+    ]
+}

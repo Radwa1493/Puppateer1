@@ -1,0 +1,33 @@
+IDE: V.S
+
+create JS project
+project terminal  :
+npm init
+npm i puppeteer --save
+npm i mocha --save-dev 
+npm i chai --save-dev 
+
+npm i @supercharge/strings  // generate string
+"scripts": {
+    "test": "node ./node_modules/mocha/bin/mocha --timeout=30000 ./tests/**.js" },
+  
+  npm run test
+
+npm install --save-dev --save-exact prettier
+
+
+
+pupp
+
+
+    const Browser = await puppeteer.launch ({headless:false,slowMo:500 ,devtools:true})}) // slowMo ->slowdown execution
+	
+	await page.waitForTimeout(1000)
+	await page.goForward()
+    await page.goBack()
+	await page.reload()
+	
+    await page.type('','')
+chai..........................
+const expect = require('chai').expect
+expect(title).to.be.a('string','Möbelhaus Kraft - Möbel und Dekorationen für ein schöneres Zuhause')

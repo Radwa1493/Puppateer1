@@ -1,0 +1,78 @@
+{
+    "sourceFile": "KnowHow.txt",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 15,
+            "patches": [
+                {
+                    "date": 1685719221717,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1685719231527,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,21 +7,14 @@\n npm i mocha --save-dev \r\n npm i chai --save-dev \r\n \r\n \"scripts\": {\r\n-    \"test\": \"node ./node_modules/mocha/bin/mocha --timeout=30000 ./tests/**.js\"\r\n-  },\r\n+    \"test\": \"node ./node_modules/mocha/bin/mocha --timeout=30000 ./tests/**.js\" },\r\n   \r\n   npm run test\r\n \r\n-\r\n-\r\n npm install --save-dev --save-exact prettier\r\n \r\n-\r\n-\r\n-\r\n-\r\n     const Browser = await puppeteer.launch ({headless:false,slowMo:500 ,devtools:true})}) // slowMo ->slowdown execution\r\n \t\r\n \tawait page.waitForTimeout(1000)\r\n \tawait page.goForward()\r\n"
+                },
+                {
+                    "date": 1685729306507,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,8 +6,9 @@\n npm i puppeteer --save\r\n npm i mocha --save-dev \r\n npm i chai --save-dev \r\n \r\n+npm i @supercharge/strings  \r\n \"scripts\": {\r\n     \"test\": \"node ./node_modules/mocha/bin/mocha --timeout=30000 ./tests/**.js\" },\r\n   \r\n   npm run test\r\n"
+                },
+                {
+                    "date": 1685729311692,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,9 +6,9 @@\n npm i puppeteer --save\r\n npm i mocha --save-dev \r\n npm i chai --save-dev \r\n \r\n-npm i @supercharge/strings  \r\n+npm i @supercharge/strings  // generate s\r\n \"scripts\": {\r\n     \"test\": \"node ./node_modules/mocha/bin/mocha --timeout=30000 ./tests/**.js\" },\r\n   \r\n   npm run test\r\n"
+                },
+                {
+                    "date": 1685744956841,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,9 +6,9 @@\n npm i puppeteer --save\r\n npm i mocha --save-dev \r\n npm i chai --save-dev \r\n \r\n-npm i @supercharge/strings  // generate s\r\n+npm i @supercharge/strings  // generate string\r\n \"scripts\": {\r\n     \"test\": \"node ./node_modules/mocha/bin/mocha --timeout=30000 ./tests/**.js\" },\r\n   \r\n   npm run test\r\n@@ -22,4 +22,5 @@\n     await page.goBack()\r\n \tawait page.reload()\r\n \t\r\n     await page.type('','')\r\n+..........................\r\n"
+                },
+                {
+                    "date": 1685744962461,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -22,5 +22,5 @@\n     await page.goBack()\r\n \tawait page.reload()\r\n \t\r\n     await page.type('','')\r\n-..........................\r\n+cha..........................\r\n"
+                },
+                {
+                    "date": 1685745045860,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -22,5 +22,6 @@\n     await page.goBack()\r\n \tawait page.reload()\r\n \t\r\n     await page.type('','')\r\n-cha..........................\r\n+chai..........................\r\n+const expect = require('chai').expect\r\n"
+                },
+                {
+                    "date": 1685745055756,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -24,4 +24,5 @@\n \t\r\n     await page.type('','')\r\n chai..........................\r\n const expect = require('chai').expect\r\n+        expect(title).to.be.a('string','Möbelhaus Kraft - Möbel und Dekorationen für ein schöneres Zuhause')\r\n"
+                },
+                {
+                    "date": 1685745072837,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -14,8 +14,13 @@\n   npm run test\r\n \r\n npm install --save-dev --save-exact prettier\r\n \r\n+\r\n+\r\n+\r\n+\r\n+\r\n     const Browser = await puppeteer.launch ({headless:false,slowMo:500 ,devtools:true})}) // slowMo ->slowdown execution\r\n \t\r\n \tawait page.waitForTimeout(1000)\r\n \tawait page.goForward()\r\n@@ -24,5 +29,5 @@\n \t\r\n     await page.type('','')\r\n chai..........................\r\n const expect = require('chai').expect\r\n-        expect(title).to.be.a('string','Möbelhaus Kraft - Möbel und Dekorationen für ein schöneres Zuhause')\r\n+expect(title).to.be.a('string','Möbelhaus Kraft - Möbel und Dekorationen für ein schöneres Zuhause')\r\n"
+                },
+                {
+                    "date": 1685745087593,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -16,11 +16,11 @@\n npm install --save-dev --save-exact prettier\r\n \r\n \r\n \r\n+puppat\r\n \r\n \r\n-\r\n     const Browser = await puppeteer.launch ({headless:false,slowMo:500 ,devtools:true})}) // slowMo ->slowdown execution\r\n \t\r\n \tawait page.waitForTimeout(1000)\r\n \tawait page.goForward()\r\n"
+                },
+                {
+                    "date": 1685745093206,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -16,9 +16,9 @@\n npm install --save-dev --save-exact prettier\r\n \r\n \r\n \r\n-puppat\r\n+puppeteer\r\n \r\n \r\n     const Browser = await puppeteer.launch ({headless:false,slowMo:500 ,devtools:true})}) // slowMo ->slowdown execution\r\n \t\r\n"
+                },
+                {
+                    "date": 1685745107810,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -16,11 +16,23 @@\n npm install --save-dev --save-exact prettier\r\n \r\n \r\n \r\n-puppeteer\r\n+puppeteer.....................\r\n+const puppeteer = require('puppeteer');\r\n+const expect = require('chai').expect\r\n \r\n+const Str = require('@supercharge/strings')\r\n \r\n+describe('Registraion Scenario ', () => {\r\n+\r\n+    it('Launch Browser', async function() {\r\n+\r\n+    })\r\n+\r\n+})\r\n+\r\n+\r\n     const Browser = await puppeteer.launch ({headless:false,slowMo:500 ,devtools:true})}) // slowMo ->slowdown execution\r\n \t\r\n \tawait page.waitForTimeout(1000)\r\n \tawait page.goForward()\r\n"
+                },
+                {
+                    "date": 1685745124063,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -18,12 +18,9 @@\n \r\n \r\n puppeteer.....................\r\n const puppeteer = require('puppeteer');\r\n-const expect = require('chai').expect\r\n \r\n-const Str = require('@supercharge/strings')\r\n-\r\n describe('Registraion Scenario ', () => {\r\n \r\n     it('Launch Browser', async function() {\r\n \r\n"
+                },
+                {
+                    "date": 1685745756897,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -38,5 +38,5 @@\n \t\r\n     await page.type('','')\r\n chai..........................\r\n const expect = require('chai').expect\r\n-expect(title).to.be.a('string','Möbelhaus Kraft - Möbel und Dekorationen für ein schöneres Zuhause')\r\n+expect(title).to.be.a('Möbelhaus Kraft - Möbel und Dekorationen für ein schöneres Zuhause')\r\n"
+                },
+                {
+                    "date": 1685745777647,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -40,4 +40,5 @@\n chai..........................\r\n const expect = require('chai').expect\r\n expect(title).to.be.a('Möbelhaus Kraft - Möbel und Dekorationen für ein schöneres Zuhause')\r\n expect(emailOptOutConfirmedValue).to.include('yes')\r\n+.\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1685784831927,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,72 @@\n+IDE: V.S\r\n+\r\n+create JS project\r\n+project terminal  :\r\n+npm init\r\n+npm i puppeteer --save\r\n+npm i mocha --save\r\n+npm i chai --save\r\n+npm i jest --save\r\n+npm i jest-image-snapshot --save\r\n+npm i prettier --save\r\n+npm i @supercharge/strings  // generate string\r\n+\"scripts\": {\r\n+    \"test\": \"node ./node_modules/mocha/bin/mocha --timeout=30000 ./tests/**.js\" },\r\n+  \r\n+  npm run test\r\n+\r\n+npm install --save-dev --save-exact prettier\r\n+\r\n+\r\n+\r\n+puppeteer.....................\r\n+const puppeteer = require('puppeteer');\r\n+\r\n+describe('Registraion Scenario ', () => {\r\n+\r\n+    it('Launch Browser', async function() {\r\n+\r\n+    })\r\n+\r\n+})\r\n+        const browser = await puppeteer.launch({headless:false, args: ['--start-maximized'] }) // open browser in maxmize window\r\n+        const page = await browser.newPage(); // open new tab\r\n+        await page.setViewport({ width: 1266, height: 768}); // set screen size\r\n+        await page.goto('https://www.moebel-kraft.de/'); // navigate to url \r\n+        const title = await page.title() // get title\r\n+\t\r\n+\tawait page.waitForTimeout(1000)\r\n+\tawait page.goForward()\r\n+    await page.goBack()\r\n+\tawait page.reload()\r\n+\tawait page.type('','')\r\n+    await page.click(\"css\") ;\r\n+    await page.setDefaultNavigationTimeout(10000)\r\n+    await page.setDefaultTimeout(10000)\r\n+\r\n+wait for element display ................\r\n+await page.waitForXPath(//xpath)\r\n+or\r\n+await page.waitForSelector(css)\r\n+\r\n+wait for element disappear ................\r\n+await page.waitFor(()=>!document.querySelector(CSS))\r\n+or \r\n+await page.waitForSelector('CSS',{hidden:true,timeout:3000})\r\n+\r\n+Hooks...........................\r\n+    before(async function() {\r\n+    })\r\n+    after(async function() {\r\n+    })\r\n+    beforeEach(async function() {\r\n+    })\r\n+    afterEach(async function() {\r\n+    })\r\n+\r\n+\r\n+chai..........................\r\n+const expect = require('chai').expect\r\n+expect(title).to.be.a('Möbelhaus Kraft - Möbel und Dekorationen für ein schöneres Zuhause')\r\n+expect(emailOptOutConfirmedValue).to.include('yes')\r\n+expect(number)..to.equal(int)\n\\ No newline at end of file\n"
+                }
+            ],
+            "date": 1685719221717,
+            "name": "Commit-0",
+            "content": "IDE: V.S\r\n\r\ncreate JS project\r\nproject terminal  :\r\nnpm init\r\nnpm i puppeteer --save\r\nnpm i mocha --save-dev \r\nnpm i chai --save-dev \r\n\r\n\"scripts\": {\r\n    \"test\": \"node ./node_modules/mocha/bin/mocha --timeout=30000 ./tests/**.js\"\r\n  },\r\n  \r\n  npm run test\r\n\r\n\r\n\r\nnpm install --save-dev --save-exact prettier\r\n\r\n\r\n\r\n\r\n\r\n    const Browser = await puppeteer.launch ({headless:false,slowMo:500 ,devtools:true})}) // slowMo ->slowdown execution\r\n\t\r\n\tawait page.waitForTimeout(1000)\r\n\tawait page.goForward()\r\n    await page.goBack()\r\n\tawait page.reload()\r\n\t\r\n    await page.type('','')\r\n"
+        }
+    ]
+}

@@ -1,0 +1,202 @@
+{
+    "sourceFile": "tests/RegistraionScenario.js",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 46,
+            "patches": [
+                {
+                    "date": 1685710325982,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1685710342163,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,12 +2,11 @@\n \r\n describe('Registraion Scenario ', () => {\r\n \r\n     it('Launch Browser', async function() {\r\n+    \r\n       \r\n       \r\n-      \r\n-      \r\n         const Browser = await puppeteer.launch ({headless:false})\r\n         const page = await Browser.newPage()\r\n         await page.goto('https://www.moebel-kraft.de/')\r\n     })\r\n"
+                },
+                {
+                    "date": 1685710959948,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,16 @@\n+//adding Puppeteer library\r\n+const pt = require('puppeteer');\r\n+pt.launch().then(async browser => {\r\n+   //browser new page\r\n+   const p = await browser.newPage();\r\n+   //set viewpoint of browser page\r\n+   await p.setViewport({ width: 1000, height: 500 })\r\n+   //launch URL\r\n+   await p.goto('https://www.tutorialspoint.com/index.htm')\r\n+   //capture screenshot\r\n+   await p.screenshot({\r\n+      path: 'tutorialspoint.png'\r\n+   });\r\n+   //browser close\r\n+   await browser.close()\r\n+})\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1685710970210,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,25 +6,6 @@\n    //set viewpoint of browser page\r\n    await p.setViewport({ width: 1000, height: 500 })\r\n    //launch URL\r\n    await p.goto('https://www.tutorialspoint.com/index.htm')\r\n-   //capture screenshot\r\n-   await p.screenshot({\r\n-      path: 'tutorialspoint.png'\r\n-   });\r\n-   //browser close\r\n-   await browser.close()\r\n-})\n-const puppeteer = require('puppeteer');\r\n \r\n-describe('Registraion Scenario ', () => {\r\n-\r\n-    it('Launch Browser', async function() {\r\n-    \r\n-      \r\n-      \r\n-        const Browser = await puppeteer.launch ({headless:false})\r\n-        const page = await Browser.newPage()\r\n-        await page.goto('https://www.moebel-kraft.de/')\r\n-    })\r\n-\r\n })\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1685710980917,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,11 +1,14 @@\n-//adding Puppeteer library\r\n-const pt = require('puppeteer');\r\n-pt.launch().then(async browser => {\r\n-   //browser new page\r\n-   const p = await browser.newPage();\r\n-   //set viewpoint of browser page\r\n-   await p.setViewport({ width: 1000, height: 500 })\r\n-   //launch URL\r\n-   await p.goto('https://www.tutorialspoint.com/index.htm')\r\n+const puppeteer = require('puppeteer');\r\n \r\n+describe('Registraion Scenario ', () => {\r\n+\r\n+    it('Launch Browser', async function() {\r\n+    \r\n+      \r\n+      \r\n+        const Browser = await puppeteer.launch ({headless:false})\r\n+        const page = await Browser.newPage()\r\n+        await page.goto('https://www.moebel-kraft.de/')\r\n+    })\r\n+\r\n })\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1685711179135,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,9 +6,9 @@\n     \r\n       \r\n       \r\n         const Browser = await puppeteer.launch ({headless:false})\r\n-        const page = await Browser.newPage()\r\n+       // const page = await Browser.newPage()\r\n         await page.goto('https://www.moebel-kraft.de/')\r\n     })\r\n \r\n })\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1685711207933,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,9 +6,9 @@\n     \r\n       \r\n       \r\n         const Browser = await puppeteer.launch ({headless:false})\r\n-       // const page = await Browser.newPage()\r\n+        const page = await Browser.newPage()\r\n         await page.goto('https://www.moebel-kraft.de/')\r\n     })\r\n \r\n })\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1685711684219,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,14 @@\n+const puppeteer = require('puppeteer');\r\n+\r\n+describe('Registraion Scenario ', () => {\r\n+\r\n+    it('Launch Browser', async function() {\r\n+    \r\n+      \r\n+      \r\n+        const Browser = await puppeteer.launch ({headless:false,devtools})\r\n+        const page = await Browser.newPage()\r\n+        await page.goto('https://www.moebel-kraft.de/')\r\n+    })\r\n+\r\n+})\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1685711963245,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,24 +5,11 @@\n     it('Launch Browser', async function() {\r\n     \r\n       \r\n       \r\n-        const Browser = await puppeteer.launch ({headless:false,devtools})\r\n+        const Browser = await puppeteer.launch ({headless:false,devtools:true})\r\n         const page = await Browser.newPage()\r\n         await page.goto('https://www.moebel-kraft.de/')\r\n+        await page\r\n     })\r\n \r\n-})\n-const puppeteer = require('puppeteer');\r\n-\r\n-describe('Registraion Scenario ', () => {\r\n-\r\n-    it('Launch Browser', async function() {\r\n-    \r\n-      \r\n-      \r\n-        const Browser = await puppeteer.launch ({headless:false})\r\n-        const page = await Browser.newPage()\r\n-        await page.goto('https://www.moebel-kraft.de/')\r\n-    })\r\n-\r\n })\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1685711968448,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -8,8 +8,8 @@\n       \r\n         const Browser = await puppeteer.launch ({headless:false,devtools:true})\r\n         const page = await Browser.newPage()\r\n         await page.goto('https://www.moebel-kraft.de/')\r\n-        await page\r\n+        await page.reload()\r\n     })\r\n \r\n })\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1685712032094,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,9 +6,9 @@\n     \r\n       \r\n       \r\n         const Browser = await puppeteer.launch ({headless:false,devtools:true})\r\n-        const page = await Browser.newPage()\r\n+        const page = await Browser.\r\n         await page.goto('https://www.moebel-kraft.de/')\r\n         await page.reload()\r\n     })\r\n \r\n"
+                },
+                {
+                    "date": 1685712037940,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,9 +6,9 @@\n     \r\n       \r\n       \r\n         const Browser = await puppeteer.launch ({headless:false,devtools:true})\r\n-        const page = await Browser.\r\n+        const page = await Browser.page\r\n         await page.goto('https://www.moebel-kraft.de/')\r\n         await page.reload()\r\n     })\r\n \r\n"
+                },
+                {
+                    "date": 1685712043267,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,9 +6,9 @@\n     \r\n       \r\n       \r\n         const Browser = await puppeteer.launch ({headless:false,devtools:true})\r\n-        const page = await Browser.page\r\n+        const page = await Browser.pa\r\n         await page.goto('https://www.moebel-kraft.de/')\r\n         await page.reload()\r\n     })\r\n \r\n"
+                },
+                {
+                    "date": 1685712170549,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,9 +6,9 @@\n     \r\n       \r\n       \r\n         const Browser = await puppeteer.launch ({headless:false,devtools:true})\r\n-        const page = await Browser.pa\r\n+        const page = await Browser.p()\r\n         await page.goto('https://www.moebel-kraft.de/')\r\n         await page.reload()\r\n     })\r\n \r\n"
+                },
+                {
+                    "date": 1685712196451,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,9 +6,9 @@\n     \r\n       \r\n       \r\n         const Browser = await puppeteer.launch ({headless:false,devtools:true})\r\n-        const page = await Browser.p()\r\n+        const page = await Browser.new()\r\n         await page.goto('https://www.moebel-kraft.de/')\r\n         await page.reload()\r\n     })\r\n \r\n"
+                },
+                {
+                    "date": 1685712387223,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,12 +3,14 @@\n describe('Registraion Scenario ', () => {\r\n \r\n     it('Launch Browser', async function() {\r\n     \r\n+        const browser = await puppeteer.launch();\r\n+        const page = await browser.newPage();\r\n+        await page.goto('https://www.freecodecamp.org/');\r\n       \r\n-      \r\n         const Browser = await puppeteer.launch ({headless:false,devtools:true})\r\n-        const page = await Browser.new()\r\n+        const page = await Browser.newPage()\r\n         await page.goto('https://www.moebel-kraft.de/')\r\n         await page.reload()\r\n     })\r\n \r\n"
+                },
+                {
+                    "date": 1685712404944,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,9 +5,9 @@\n     it('Launch Browser', async function() {\r\n     \r\n         const browser = await puppeteer.launch();\r\n         const page = await browser.newPage();\r\n-        await page.goto('https://www.freecodecamp.org/');\r\n+        await page.goto('https://www.moebel-kraft.de/')\r\n       \r\n         const Browser = await puppeteer.launch ({headless:false,devtools:true})\r\n         const page = await Browser.newPage()\r\n         await page.goto('https://www.moebel-kraft.de/')\r\n"
+                },
+                {
+                    "date": 1685712460474,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,17 @@\n+const puppeteer = require('puppeteer');\r\n+\r\n+describe('Registraion Scenario ', () => {\r\n+\r\n+    it('Launch Browser', async function() {\r\n+    \r\n+        const browser = await puppeteer.launch();\r\n+        const page = await browser.newPage();\r\n+        await page.goto('https://www.moebel-kraft.de/');\r\n+      \r\n+        const Browser = await puppeteer.launch ({headless:false,devtools:true})\r\n+        const page = await Browser.newPage()\r\n+        await page.goto('https://www.moebel-kraft.de/')\r\n+        await page.reload()\r\n+    })\r\n+\r\n+})\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1685712473267,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,28 +7,11 @@\n         const browser = await puppeteer.launch();\r\n         const page = await browser.newPage();\r\n         await page.goto('https://www.moebel-kraft.de/');\r\n       \r\n-        const Browser = await puppeteer.launch ({headless:false,devtools:true})\r\n+        const Browser = await puppeteer.launch \r\n         const page = await Browser.newPage()\r\n         await page.goto('https://www.moebel-kraft.de/')\r\n         await page.reload()\r\n     })\r\n \r\n-})\n-const puppeteer = require('puppeteer');\r\n-\r\n-describe('Registraion Scenario ', () => {\r\n-\r\n-    it('Launch Browser', async function() {\r\n-    \r\n-        const browser = await puppeteer.launch();\r\n-        const page = await browser.newPage();\r\n-        await page.goto('https://www.moebel-kraft.de/')\r\n-      \r\n-        const Browser = await puppeteer.launch ({headless:false,devtools:true})\r\n-        const page = await Browser.newPage()\r\n-        await page.goto('https://www.moebel-kraft.de/')\r\n-        await page.reload()\r\n-    })\r\n-\r\n })\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1685712482870,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,9 +3,9 @@\n describe('Registraion Scenario ', () => {\r\n \r\n     it('Launch Browser', async function() {\r\n     \r\n-        const browser = await puppeteer.launch();\r\n+        const browser = await puppeteer.launch({headless:false,devtools:true})\r\n         const page = await browser.newPage();\r\n         await page.goto('https://www.moebel-kraft.de/');\r\n       \r\n         const Browser = await puppeteer.launch \r\n"
+                },
+                {
+                    "date": 1685714512496,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,12 +6,9 @@\n     \r\n         const browser = await puppeteer.launch({headless:false,devtools:true})\r\n         const page = await browser.newPage();\r\n         await page.goto('https://www.moebel-kraft.de/');\r\n-      \r\n-        const Browser = await puppeteer.launch \r\n-        const page = await Browser.newPage()\r\n-        await page.goto('https://www.moebel-kraft.de/')\r\n+        await page.fo\r\n         await page.reload()\r\n     })\r\n \r\n })\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1685714520500,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,9 +6,11 @@\n     \r\n         const browser = await puppeteer.launch({headless:false,devtools:true})\r\n         const page = await browser.newPage();\r\n         await page.goto('https://www.moebel-kraft.de/');\r\n-        await page.fo\r\n+        await page.goForward()\r\n+        await page.goForward()\r\n+\r\n         await page.reload()\r\n     })\r\n \r\n })\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1685714526150,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,9 +7,9 @@\n         const browser = await puppeteer.launch({headless:false,devtools:true})\r\n         const page = await browser.newPage();\r\n         await page.goto('https://www.moebel-kraft.de/');\r\n         await page.goForward()\r\n-        await page.goForward()\r\n+        await page.goBack\r\n \r\n         await page.reload()\r\n     })\r\n \r\n"
+                },
+                {
+                    "date": 1685714556474,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,9 +7,9 @@\n         const browser = await puppeteer.launch({headless:false,devtools:true})\r\n         const page = await browser.newPage();\r\n         await page.goto('https://www.moebel-kraft.de/');\r\n         await page.goForward()\r\n-        await page.goBack\r\n+        await page.\r\n \r\n         await page.reload()\r\n     })\r\n \r\n"
+                },
+                {
+                    "date": 1685714561591,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,9 +7,9 @@\n         const browser = await puppeteer.launch({headless:false,devtools:true})\r\n         const page = await browser.newPage();\r\n         await page.goto('https://www.moebel-kraft.de/');\r\n         await page.goForward()\r\n-        await page.\r\n+        await page.goBack\r\n \r\n         await page.reload()\r\n     })\r\n \r\n"
+                },
+                {
+                    "date": 1685714601992,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,9 +7,10 @@\n         const browser = await puppeteer.launch({headless:false,devtools:true})\r\n         const page = await browser.newPage();\r\n         await page.goto('https://www.moebel-kraft.de/');\r\n         await page.goForward()\r\n-        await page.goBack\r\n+        \r\n+        await page.goBack()\r\n \r\n         await page.reload()\r\n     })\r\n \r\n"
+                },
+                {
+                    "date": 1685715156619,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,19 @@\n+const puppeteer = require('puppeteer');\r\n+\r\n+describe('Registraion Scenario ', () => {\r\n+\r\n+    it('Launch Browser', async function() {\r\n+    \r\n+        const browser = await puppeteer.launch({headless:false,devtools:true})\r\n+        const page = await browser.newPage();\r\n+        await page.goto('https://www.moebel-kraft.de/');\r\n+        await page.goForward()\r\n+\r\n+        await page.goForward()\r\n+\r\n+        await page.goBack()\r\n+\r\n+        await page.reload()\r\n+    })\r\n+\r\n+})\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1685715162526,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,31 +6,14 @@\n     \r\n         const browser = await puppeteer.launch({headless:false,devtools:true})\r\n         const page = await browser.newPage();\r\n         await page.goto('https://www.moebel-kraft.de/');\r\n-        await page.goForward()\r\n+        await page.type\r\n \r\n         await page.goForward()\r\n \r\n         await page.goBack()\r\n \r\n         await page.reload()\r\n     })\r\n \r\n-})\n-const puppeteer = require('puppeteer');\r\n-\r\n-describe('Registraion Scenario ', () => {\r\n-\r\n-    it('Launch Browser', async function() {\r\n-    \r\n-        const browser = await puppeteer.launch({headless:false,devtools:true})\r\n-        const page = await browser.newPage();\r\n-        await page.goto('https://www.moebel-kraft.de/');\r\n-        await page.goForward()\r\n-        \r\n-        await page.goBack()\r\n-\r\n-        await page.reload()\r\n-    })\r\n-\r\n })\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1685715175289,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,9 +6,9 @@\n     \r\n         const browser = await puppeteer.launch({headless:false,devtools:true})\r\n         const page = await browser.newPage();\r\n         await page.goto('https://www.moebel-kraft.de/');\r\n-        await page.type\r\n+        await page.type('','')\r\n \r\n         await page.goForward()\r\n \r\n         await page.goBack()\r\n"
+                },
+                {
+                    "date": 1685719190168,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,14 @@\n+const puppeteer = require('puppeteer');\r\n+\r\n+describe('Registraion Scenario ', () => {\r\n+\r\n+    it('Launch Browser', async function() {\r\n+    \r\n+        const browser = await puppeteer.launch({headless:false,devtools:true})\r\n+        const page = await browser.newPage();\r\n+        await page.goto('https://www.moebel-kraft.de/');\r\n+        await page.type('','')\r\n+\r\n+    })\r\n+\r\n+})\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1685719247592,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,13 @@\n+const puppeteer = require('puppeteer');\r\n+\r\n+describe('Registraion Scenario ', () => {\r\n+\r\n+    it('Launch Browser', async function() {\r\n+    \r\n+        const browser = await puppeteer.launch({headless:false,devtools:true})\r\n+        const page = await browser.newPage();\r\n+        await page.goto('https://www.moebel-kraft.de/');\r\n+        await page.c\r\n+    })\r\n+\r\n+})\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1685719477661,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,41 +6,8 @@\n     \r\n         const browser = await puppeteer.launch({headless:false,devtools:true})\r\n         const page = await browser.newPage();\r\n         await page.goto('https://www.moebel-kraft.de/');\r\n-        await page.c\r\n+        await page.click(\"//button[contains(., 'OK')]\")\r\n     })\r\n \r\n-})\n-const puppeteer = require('puppeteer');\r\n-\r\n-describe('Registraion Scenario ', () => {\r\n-\r\n-    it('Launch Browser', async function() {\r\n-    \r\n-        const browser = await puppeteer.launch({headless:false,devtools:true})\r\n-        const page = await browser.newPage();\r\n-        await page.goto('https://www.moebel-kraft.de/');\r\n-        await page.type('','')\r\n-\r\n-    })\r\n-\r\n-})\n-const puppeteer = require('puppeteer');\r\n-\r\n-describe('Registraion Scenario ', () => {\r\n-\r\n-    it('Launch Browser', async function() {\r\n-    \r\n-        const browser = await puppeteer.launch({headless:false,devtools:true})\r\n-        const page = await browser.newPage();\r\n-        await page.goto('https://www.moebel-kraft.de/');\r\n-        await page.type('','')\r\n-\r\n-        await page.goForward()\r\n-\r\n-        await page.goBack()\r\n-\r\n-        await page.reload()\r\n-    })\r\n-\r\n })\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1685719499734,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,8 +6,8 @@\n     \r\n         const browser = await puppeteer.launch({headless:false,devtools:true})\r\n         const page = await browser.newPage();\r\n         await page.goto('https://www.moebel-kraft.de/');\r\n-        await page.click(\"//button[contains(., 'OK')]\")\r\n+        await page.click(\"//button[contains(., 'Alle auswählen & bestätigen')]\");\r\n     })\r\n \r\n })\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1685719625481,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,8 +6,8 @@\n     \r\n         const browser = await puppeteer.launch({headless:false,devtools:true})\r\n         const page = await browser.newPage();\r\n         await page.goto('https://www.moebel-kraft.de/');\r\n-        await page.click(\"//button[contains(., 'Alle auswählen & bestätigen')]\");\r\n+        await page.click(\"//div[contains(text(), 'My saved leads')]\");\r\n     })\r\n \r\n })\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1685719652870,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,8 +6,8 @@\n     \r\n         const browser = await puppeteer.launch({headless:false,devtools:true})\r\n         const page = await browser.newPage();\r\n         await page.goto('https://www.moebel-kraft.de/');\r\n-        await page.click(\"//div[contains(text(), 'My saved leads')]\");\r\n+        await page.click(\"//div[contains(text(), 'Alle auswählen & bestätigen')]\");\r\n     })\r\n \r\n })\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1685719692327,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,8 +6,8 @@\n     \r\n         const browser = await puppeteer.launch({headless:false,devtools:true})\r\n         const page = await browser.newPage();\r\n         await page.goto('https://www.moebel-kraft.de/');\r\n-        await page.click(\"//div[contains(text(), 'Alle auswählen & bestätigen')]\");\r\n+        await page.click(\"//button[contains(text(), 'Alle auswählen & bestätigen')]\");\r\n     })\r\n \r\n })\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1685719753483,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,8 +6,10 @@\n     \r\n         const browser = await puppeteer.launch({headless:false,devtools:true})\r\n         const page = await browser.newPage();\r\n         await page.goto('https://www.moebel-kraft.de/');\r\n+        await page.waitForTimeout(1000)\r\n+\r\n         await page.click(\"//button[contains(text(), 'Alle auswählen & bestätigen')]\");\r\n     })\r\n \r\n })\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1685719760556,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,10 +6,9 @@\n     \r\n         const browser = await puppeteer.launch({headless:false,devtools:true})\r\n         const page = await browser.newPage();\r\n         await page.goto('https://www.moebel-kraft.de/');\r\n-        await page.waitForTimeout(1000)\r\n-\r\n+        await page.wa(1000)\r\n         await page.click(\"//button[contains(text(), 'Alle auswählen & bestätigen')]\");\r\n     })\r\n \r\n })\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1685719776617,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,9 +6,9 @@\n     \r\n         const browser = await puppeteer.launch({headless:false,devtools:true})\r\n         const page = await browser.newPage();\r\n         await page.goto('https://www.moebel-kraft.de/');\r\n-        await page.wa(1000)\r\n+        await page.waitFor(1000)\r\n         await page.click(\"//button[contains(text(), 'Alle auswählen & bestätigen')]\");\r\n     })\r\n \r\n })\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1685719866377,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -8,7 +8,10 @@\n         const page = await browser.newPage();\r\n         await page.goto('https://www.moebel-kraft.de/');\r\n         await page.waitFor(1000)\r\n         await page.click(\"//button[contains(text(), 'Alle auswählen & bestätigen')]\");\r\n+\r\n+        const b = (await page.$x(\"//img[@alt='tutorialspoint']\"))[0]\r\n+        b.click()\r\n     })\r\n \r\n })\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1685719877387,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -9,9 +9,9 @@\n         await page.goto('https://www.moebel-kraft.de/');\r\n         await page.waitFor(1000)\r\n         await page.click(\"//button[contains(text(), 'Alle auswählen & bestätigen')]\");\r\n \r\n-        const b = (await page.$x(\"//img[@alt='tutorialspoint']\"))[0]\r\n+        const b = (await page.$x(\"//button[contains(text(), 'Alle auswählen & bestätigen')]\"))[0]\r\n         b.click()\r\n     })\r\n \r\n })\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1685720010705,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,12 +6,9 @@\n     \r\n         const browser = await puppeteer.launch({headless:false,devtools:true})\r\n         const page = await browser.newPage();\r\n         await page.goto('https://www.moebel-kraft.de/');\r\n-        await page.waitFor(1000)\r\n+        \r\n         await page.click(\"//button[contains(text(), 'Alle auswählen & bestätigen')]\");\r\n-\r\n-        const b = (await page.$x(\"//button[contains(text(), 'Alle auswählen & bestätigen')]\"))[0]\r\n-        b.click()\r\n     })\r\n \r\n })\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1685720020525,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,9 +6,8 @@\n     \r\n         const browser = await puppeteer.launch({headless:false,devtools:true})\r\n         const page = await browser.newPage();\r\n         await page.goto('https://www.moebel-kraft.de/');\r\n-        \r\n-        await page.click(\"//button[contains(text(), 'Alle auswählen & bestätigen')]\");\r\n+        await page.click(\"#responsive > div.consentForm__container > div > div > div.consentForm__acceptButtons > div:nth-child(2) > button\");\r\n     })\r\n \r\n })\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1685720121334,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,8 +5,9 @@\n     it('Launch Browser', async function() {\r\n     \r\n         const browser = await puppeteer.launch({headless:false,devtools:true})\r\n         const page = await browser.newPage();\r\n+        \r\n         await page.goto('https://www.moebel-kraft.de/');\r\n         await page.click(\"#responsive > div.consentForm__container > div > div > div.consentForm__acceptButtons > div:nth-child(2) > button\");\r\n     })\r\n \r\n"
+                },
+                {
+                    "date": 1685720170394,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,15 @@\n+const puppeteer = require('puppeteer');\r\n+\r\n+describe('Registraion Scenario ', () => {\r\n+\r\n+    it('Launch Browser', async function() {\r\n+    \r\n+        const browser = await puppeteer.launch({headless:false,devtools:true})\r\n+        const page = await browser.newPage();\r\n+\r\n+        await page.goto('https://www.moebel-kraft.de/');\r\n+\r\n+        await page.click(\"#responsive > div.consentForm__container > div > div > div.consentForm__acceptButtons > div:nth-child(2) > button\");\r\n+    })\r\n+\r\n+})\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1685720177639,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,25 +5,11 @@\n     it('Launch Browser', async function() {\r\n     \r\n         const browser = await puppeteer.launch({headless:false,devtools:true})\r\n         const page = await browser.newPage();\r\n-\r\n         await page.goto('https://www.moebel-kraft.de/');\r\n+        await page.waitForTimeout(1000)\r\n \r\n-        await page.click(\"#responsive > div.consentForm__container > div > div > div.consentForm__acceptButtons > div:nth-child(2) > button\");\r\n+        await page.click(\"//button[contains(text(), 'Alle auswählen & bestätigen')]\");\r\n     })\r\n \r\n-})\n-const puppeteer = require('puppeteer');\r\n-\r\n-describe('Registraion Scenario ', () => {\r\n-\r\n-    it('Launch Browser', async function() {\r\n-    \r\n-        const browser = await puppeteer.launch({headless:false,devtools:true})\r\n-        const page = await browser.newPage();\r\n-        \r\n-        await page.goto('https://www.moebel-kraft.de/');\r\n-        await page.click(\"#responsive > div.consentForm__container > div > div > div.consentForm__acceptButtons > div:nth-child(2) > button\");\r\n-    })\r\n-\r\n })\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1685720228854,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,8 +6,8 @@\n     \r\n         const browser = await puppeteer.launch({headless:false,devtools:true})\r\n         const page = await browser.newPage();\r\n         await page.goto('https://www.moebel-kraft.de/');\r\n-        await page.click(\"//button[contains(text(), 'Alle auswählen & bestätigen')]\");\r\n+        await page.click(\"//div[contains(text(), 'Alle auswählen & bestätigen')]\");\r\n     })\r\n \r\n })\n\\ No newline at end of file\n"
+                }
+            ],
+            "date": 1685710325982,
+            "name": "Commit-0",
+            "content": "const puppeteer = require('puppeteer');\r\n\r\ndescribe('Registraion Scenario ', () => {\r\n\r\n    it('Launch Browser', async function() {\r\n      \r\n      \r\n      \r\n      \r\n        const Browser = await puppeteer.launch ({headless:false})\r\n        const page = await Browser.newPage()\r\n        await page.goto('https://www.moebel-kraft.de/')\r\n    })\r\n\r\n})"
+        }
+    ]
+}
