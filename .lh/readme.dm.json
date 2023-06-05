@@ -1,0 +1,38 @@
+{
+    "sourceFile": "readme.dm",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 5,
+            "patches": [
+                {
+                    "date": 1686005606948,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1686005616682,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,1 +1,1 @@\n-Download \n\\ No newline at end of file\n+Download libraries \n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1686005623066,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,1 +1,2 @@\n-Download libraries \n\\ No newline at end of file\n+Download libraries \r\n+Terminal -\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1686005628226,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,2 +1,2 @@\n Download libraries \r\n-Terminal -\n\\ No newline at end of file\n+Terminal \n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1686005645030,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,2 +1,2 @@\n Download libraries \r\n-Terminal \n\\ No newline at end of file\n+Run in terminal Terminal : npm install --save-dev @babel/core@^7.0.0 @babel/preset-env@^7.0.0 babel-jest@^26.0.0 jest@^26.0.0 jest-puppeteer@^5.0.0 puppeteer@^5.4.1\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1686005967537,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,2 +1,2 @@\n Download libraries \r\n-Run in terminal Terminal : npm install --save-dev @babel/core@^7.0.0 @babel/preset-env@^7.0.0 babel-jest@^26.0.0 jest@^26.0.0 jest-puppeteer@^5.0.0 puppeteer@^5.4.1\n\\ No newline at end of file\n+Run in terminal Terminal :npm install --save-dev @babel/core@^7.0.0 @babel/preset-env@^7.0.0 babel-jest@^26.0.0 jest@^26.0.0 jest-puppeteer@^5.0.0 puppeteer@^5.4.1 \n\\ No newline at end of file\n"
+                }
+            ],
+            "date": 1686005606948,
+            "name": "Commit-0",
+            "content": "Download "
+        }
+    ]
+}
