@@ -4,7 +4,7 @@ import BasePage from './BasePage'
         Cookies_Buttom:'div.consentForm__acceptButton:nth-child(2) > button',
         Profile_Buttom:  '.headerElement__icon--login' ,
         loginstatus_Flag:  '.headerElement__status--login' ,
-    
+        Homelinks :'.htmlTile center a'
      }
     export default class HomePage extends BasePage {
     
@@ -40,4 +40,26 @@ import BasePage from './BasePage'
   // Wait for the page to finish loading
   await page.waitForNavigation({ waitUntil: 'networkidle0' });
     }
+
+
+    async OpenCat(){ 
+//      await page.waitForTimeout(3000)
+
+  // Wait for any additional content to be loaded
+  await page.waitForNavigation({ waitUntil: 'networkidle0' });
+
+      // Scroll down the page by the height of the viewport
+await page.evaluate(() => {
+  window.scrollBy(0, window.innerHeight);
+});
+
+
+      const e = await page.$$(elements.Homelinks);
+  
+
+      await e[10].click();
+
+
+    }
+
 }
