@@ -30,10 +30,9 @@ await page.waitForTimeout(9000)
 await page.evaluate(() => {
     window.scrollBy(0, window.innerHeight);
   });
-  let count = 0
-  do {
+    
     await products[rand].click();
-    products.splice(rand, 1);
+    myArray.splice(rand, 1);
     await page.waitForTimeout(2000)
 
   //  await page.waitForSelector('div.wishlistIcon:nth-child(1)')
@@ -55,8 +54,7 @@ await page.evaluate(() => {
     await page.waitForTimeout(9000)
 
 
-    count++;
-  } while (count < 4);
+
 
 
 

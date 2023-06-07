@@ -56,7 +56,7 @@ await page.evaluate(() => {
 
 
     count++;
-  } while (count < 4);
+  } while (count < 10);
 
 
 

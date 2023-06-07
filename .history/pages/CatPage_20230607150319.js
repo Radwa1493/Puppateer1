@@ -55,8 +55,7 @@ await page.evaluate(() => {
     await page.waitForTimeout(9000)
 
 
-    count++;
-  } while (count < 4);
+   } (count < 4);
 
 
 

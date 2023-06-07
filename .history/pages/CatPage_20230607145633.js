@@ -22,18 +22,12 @@ export default class CatPage {
 // Wait for the page to load
 await page.waitForTimeout(9000)
 
-    // Get list of all Sessel products
-    const products = await page.$$("a[href*='/artikel/']");
-    const rand = Math.floor(Math.random() * products.length);
-    console.log('randam item '+rand);
-          // Scroll down the page by the height of the viewport
-await page.evaluate(() => {
-    window.scrollBy(0, window.innerHeight);
-  });
-  let count = 0
-  do {
-    await products[rand].click();
-    products.splice(rand, 1);
+ 
+
+  do {   
+   const i1 = await page.$$("a[href*='/artikel/']");
+    await i1[rand].click();
+    i1.splice(rand, 1);
     await page.waitForTimeout(2000)
 
   //  await page.waitForSelector('div.wishlistIcon:nth-child(1)')
@@ -50,13 +44,13 @@ await page.evaluate(() => {
     await page.waitForTimeout(9000)
     //await page.back();
     await page.goBack();
-        await page.goBack();
+    await page.goBack();
+
 
     await page.waitForTimeout(9000)
-
-
-    count++;
   } while (count < 4);
+
+
 
 
 
