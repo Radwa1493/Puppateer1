@@ -65,12 +65,6 @@ import {  Url, timeout,InValidPassword } from '../config'
 					})
 
 
-
-
-
-
-
-
 		describe('valid Login Test', () => {
 			it('Enter valid credincials', async function ()   {
 	//			await homePage.OpenProfile()
@@ -98,13 +92,16 @@ import {  Url, timeout,InValidPassword } from '../config'
 
 		});	
 			
-			it('Open category  page', async function ()   {
+		it('Open category  page', async function ()   {
 						await homePage.OpenCat()
-			});	
-			it('Select Randam Categoy', async function ()   {
+		});	
+		it('Select Randam Categoy', async function ()   {
 				await catPage.selectRandamCat()
-	});		
-				
+	    });		
+			
+	it('Select Randam Item', async function ()   {
+		await catPage.selectRandamItem()
+            });		
 			});		
 
 

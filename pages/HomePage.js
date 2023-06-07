@@ -53,13 +53,11 @@ await page.evaluate(() => {
   window.scrollBy(0, window.innerHeight);
 });
 
-
       const e = await page.$$(elements.Homelinks);
+      await e[9].click();
+  // Wait for any additional content to be loaded
+  await page.waitForNavigation({ waitUntil: 'networkidle0' });
   
-
-      await e[10].click();
-
-
     }
 
 }
