@@ -14,7 +14,7 @@ export default class CatPage {
 
      //   await e[rand].click();
 
-        await e[0].click();
+        await e[rand].click();
 
 }
 
@@ -30,11 +30,31 @@ await page.waitForTimeout(9000)
 await page.evaluate(() => {
     window.scrollBy(0, window.innerHeight);
   });
-    const i1 = await page.$$("a[href*='/artikel/'] + div:last-of-type");
+    
+    const i1 = await page.$$("a[href*='/artikel/']");
     await i1[rand].click();
+    await page.waitForTimeout(2000)
 
-    //console.log(products)
+  //  await page.waitForSelector('div.wishlistIcon:nth-child(1)')
+    await page.click('div.wishlistIcon:nth-child(1)')
+   // await page.waitForTimeout(3000)
 
+   const priceElement = await page.$('.priceNew--row');
+   const text = await page.evaluate(priceElement => priceElement.textContent, priceElement);
+   console.log(text);
+
+
+   
+    await page.click('.headerElement__icon--wishlist')
+
+    await page.waitForTimeout(9000)
+
+
+
+
+
+
+    
     
 
 /*
