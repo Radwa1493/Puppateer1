@@ -1,0 +1,74 @@
+{
+    "sourceFile": "pages/Cat_Page.js",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 14,
+            "patches": [
+                {
+                    "date": 1686060234350,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1686060246750,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,6 @@\n import BasePage from './BasePage'\r\n \r\n-let PasswprdGen\r\n-let textGen\r\n-let emailGen\r\n const elements ={\r\n     registration_Buttom:'button#registerAccount',\r\n     Gender_DropDown:'#salutation', \r\n     FristName:'#firstName',\r\n"
+                },
+                {
+                    "date": 1686060257847,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,56 +1,14 @@\n import BasePage from './BasePage'\r\n \r\n const elements ={\r\n     registration_Buttom:'button#registerAccount',\r\n-    Gender_DropDown:'#salutation', \r\n-    FristName:'#firstName',\r\n-    LastName:'#lastName',\r\n-    Email:'#email',\r\n-    Passwprd:'#password',\r\n-    Password2:'#password2',\r\n-    Checkbox1:'div.accountNew__newsletterCheckbox > div > div > span.checkbox__checkbox.checkbox__checkbox--alignTop',\r\n-    Checkbox2:'div.accountNew__agbCheckbox > div > div > span.checkbox__checkbox.checkbox__checkbox--alignTop',\r\n-    submit:'#register-submit',\r\n+ \r\n  }\r\n \r\n export default class RegistionPage extends BasePage {\r\n     async isRegisterPageDisplayed(){\r\n         await page.waitForSelector(elements.Gender_DropDown)    \r\n     }\r\n \r\n-    async openRegisterPage(){\r\n-        await page.waitForSelector(elements.registration_Buttom)    \r\n-      \r\n-        await page.goto(' https://www.moebel-kraft.de/registrierung')\r\n-      //  await page.click(elements.registration_Buttom)  // sometimes not click \r\n \r\n-    }\r\n-    async enterNewUserData(){\r\n-        PasswprdGen = PasswordGenerator()\r\n-        textGen = TextGenerator()\r\n-        emailGen = textGen+'@'+textGen+'.com'\r\n-        await page.waitForSelector(elements.Gender_DropDown)    \r\n-        await page.select(elements.Gender_DropDown, Gender);\r\n-       // await page.select(elements.Gender_DropDown,'Frau')\r\n-        console.log('Frist Name : '+ textGen)\r\n-        await page.type(elements.FristName,textGen)\r\n-        console.log('Last Name : '+ textGen)\r\n-        await page.type(elements.LastName,textGen)\r\n-        console.log('Email : '+ emailGen)\r\n-        await page.type(elements.Email,textGen+'@'+textGen+'.com')\r\n-        console.log('Password : '+ PasswprdGen )\r\n-        await page.type(elements.Passwprd,PasswprdGen)\r\n-        console.log('Password2 : '+ PasswprdGen)\r\n-        await page.type(elements.Password2,PasswprdGen)\r\n-        await page.click(elements.Checkbox1) ;\r\n-        await page.click(elements.Checkbox2) ;\r\n-        await page.click(elements.submit) ;\r\n-  await page.waitForNavigation({ waitUntil: 'networkidle0' });\r\n-    }\r\n-\r\n-    // get mail used in registration \r\n-    getmail(){ return emailGen   } \r\n-    // get password used in registration \r\n-    getpassword(){ return PasswprdGen   } \r\n-\r\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1686060269485,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,5 +1,5 @@\n-import BasePage from './BasePage'\r\n+import BasePage from '../BasePage'\r\n \r\n const elements ={\r\n     registration_Buttom:'button#registerAccount',\r\n  \r\n"
+                },
+                {
+                    "date": 1686060275516,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,5 +1,5 @@\n-import BasePage from '../BasePage'\r\n+import BasePage from './BasePageBasePage'\r\n \r\n const elements ={\r\n     registration_Buttom:'button#registerAccount',\r\n  \r\n"
+                },
+                {
+                    "date": 1686060280884,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,5 +1,5 @@\n-import BasePage from './BasePageBasePage'\r\n+import BasePage from './BasePage '\r\n \r\n const elements ={\r\n     registration_Buttom:'button#registerAccount',\r\n  \r\n"
+                },
+                {
+                    "date": 1686060616211,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,8 @@\n import BasePage from './BasePage '\r\n \r\n const elements ={\r\n-    registration_Buttom:'button#registerAccount',\r\n+    registration_Buttom:'div.ccm-content-slider div li a',\r\n  \r\n  }\r\n \r\n export default class RegistionPage extends BasePage {\r\n"
+                },
+                {
+                    "date": 1686060623621,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,8 @@\n import BasePage from './BasePage '\r\n \r\n const elements ={\r\n-    registration_Buttom:'div.ccm-content-slider div li a',\r\n+    regcatigories:'div.ccm-content-slider div li a',\r\n  \r\n  }\r\n \r\n export default class RegistionPage extends BasePage {\r\n"
+                },
+                {
+                    "date": 1686060635986,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,9 +5,9 @@\n  \r\n  }\r\n \r\n export default class RegistionPage extends BasePage {\r\n-    async isRegisterPageDisplayed(){\r\n+    async slectrandam(){\r\n         await page.waitForSelector(elements.Gender_DropDown)    \r\n     }\r\n \r\n \r\n"
+                },
+                {
+                    "date": 1686060645486,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,9 +5,9 @@\n  \r\n  }\r\n \r\n export default class RegistionPage extends BasePage {\r\n-    async slectrandam(){\r\n+    async selectRandamCat(){\r\n         await page.waitForSelector(elements.Gender_DropDown)    \r\n     }\r\n \r\n \r\n"
+                },
+                {
+                    "date": 1686060850927,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -7,8 +7,17 @@\n \r\n export default class RegistionPage extends BasePage {\r\n     async selectRandamCat(){\r\n         await page.waitForSelector(elements.Gender_DropDown)    \r\n+\r\n+          // Select all the elements you want to choose from\r\n+  const elements = await page.$$('button.my-button-class');\r\n+  \r\n+  // Get a random element from the list\r\n+  const randomElement = elements[Math.floor(Math.random() * elements.length)];\r\n+  \r\n+  // Click on the random element\r\n+  await randomElement.click();\r\n     }\r\n \r\n \r\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1686060860564,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -9,12 +9,12 @@\n     async selectRandamCat(){\r\n         await page.waitForSelector(elements.Gender_DropDown)    \r\n \r\n           // Select all the elements you want to choose from\r\n-  const elements = await page.$$('button.my-button-class');\r\n+  const e = await page.$$('button.my-button-class');\r\n   \r\n   // Get a random element from the list\r\n-  const randomElement = elements[Math.floor(Math.random() * elements.length)];\r\n+  const randomElement = eleements[Math.floor(Math.random() * elements.length)];\r\n   \r\n   // Click on the random element\r\n   await randomElement.click();\r\n     }\r\n"
+                },
+                {
+                    "date": 1686060871044,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,15 +6,15 @@\n  }\r\n \r\n export default class RegistionPage extends BasePage {\r\n     async selectRandamCat(){\r\n-        await page.waitForSelector(elements.Gender_DropDown)    \r\n+        await page.waitForSelector(.Gender_DropDown)    \r\n \r\n           // Select all the elements you want to choose from\r\n   const e = await page.$$('button.my-button-class');\r\n   \r\n   // Get a random element from the list\r\n-  const randomElement = eleements[Math.floor(Math.random() * elements.length)];\r\n+  const randomElement = e[Math.floor(Math.random() * elements.length)];\r\n   \r\n   // Click on the random element\r\n   await randomElement.click();\r\n     }\r\n"
+                },
+                {
+                    "date": 1686060890167,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,12 +6,11 @@\n  }\r\n \r\n export default class RegistionPage extends BasePage {\r\n     async selectRandamCat(){\r\n-        await page.waitForSelector(.Gender_DropDown)    \r\n \r\n           // Select all the elements you want to choose from\r\n-  const e = await page.$$('button.my-button-class');\r\n+  const e = await page.$$();\r\n   \r\n   // Get a random element from the list\r\n   const randomElement = e[Math.floor(Math.random() * elements.length)];\r\n   \r\n"
+                },
+                {
+                    "date": 1686060898120,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -8,9 +8,9 @@\n export default class RegistionPage extends BasePage {\r\n     async selectRandamCat(){\r\n \r\n           // Select all the elements you want to choose from\r\n-  const e = await page.$$();\r\n+  const e = await page.$$(elements.ca);\r\n   \r\n   // Get a random element from the list\r\n   const randomElement = e[Math.floor(Math.random() * elements.length)];\r\n   \r\n"
+                }
+            ],
+            "date": 1686060234350,
+            "name": "Commit-0",
+            "content": "import BasePage from './BasePage'\r\n\r\nlet PasswprdGen\r\nlet textGen\r\nlet emailGen\r\nconst elements ={\r\n    registration_Buttom:'button#registerAccount',\r\n    Gender_DropDown:'#salutation', \r\n    FristName:'#firstName',\r\n    LastName:'#lastName',\r\n    Email:'#email',\r\n    Passwprd:'#password',\r\n    Password2:'#password2',\r\n    Checkbox1:'div.accountNew__newsletterCheckbox > div > div > span.checkbox__checkbox.checkbox__checkbox--alignTop',\r\n    Checkbox2:'div.accountNew__agbCheckbox > div > div > span.checkbox__checkbox.checkbox__checkbox--alignTop',\r\n    submit:'#register-submit',\r\n }\r\n\r\nexport default class RegistionPage extends BasePage {\r\n    async isRegisterPageDisplayed(){\r\n        await page.waitForSelector(elements.Gender_DropDown)    \r\n    }\r\n\r\n    async openRegisterPage(){\r\n        await page.waitForSelector(elements.registration_Buttom)    \r\n      \r\n        await page.goto(' https://www.moebel-kraft.de/registrierung')\r\n      //  await page.click(elements.registration_Buttom)  // sometimes not click \r\n\r\n    }\r\n    async enterNewUserData(){\r\n        PasswprdGen = PasswordGenerator()\r\n        textGen = TextGenerator()\r\n        emailGen = textGen+'@'+textGen+'.com'\r\n        await page.waitForSelector(elements.Gender_DropDown)    \r\n        await page.select(elements.Gender_DropDown, Gender);\r\n       // await page.select(elements.Gender_DropDown,'Frau')\r\n        console.log('Frist Name : '+ textGen)\r\n        await page.type(elements.FristName,textGen)\r\n        console.log('Last Name : '+ textGen)\r\n        await page.type(elements.LastName,textGen)\r\n        console.log('Email : '+ emailGen)\r\n        await page.type(elements.Email,textGen+'@'+textGen+'.com')\r\n        console.log('Password : '+ PasswprdGen )\r\n        await page.type(elements.Passwprd,PasswprdGen)\r\n        console.log('Password2 : '+ PasswprdGen)\r\n        await page.type(elements.Password2,PasswprdGen)\r\n        await page.click(elements.Checkbox1) ;\r\n        await page.click(elements.Checkbox2) ;\r\n        await page.click(elements.submit) ;\r\n  await page.waitForNavigation({ waitUntil: 'networkidle0' });\r\n    }\r\n\r\n    // get mail used in registration \r\n    getmail(){ return emailGen   } \r\n    // get password used in registration \r\n    getpassword(){ return PasswprdGen   } \r\n\r\n}"
+        }
+    ]
+}

@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 5,
+            "activePatchIndex": 19,
             "patches": [
                 {
                     "date": 1686005606948,
@@ -28,6 +28,62 @@
                 {
                     "date": 1686005967537,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,2 +1,2 @@\n Download libraries \r\n-Run in terminal Terminal : npm install --save-dev @babel/core@^7.0.0 @babel/preset-env@^7.0.0 babel-jest@^26.0.0 jest@^26.0.0 jest-puppeteer@^5.0.0 puppeteer@^5.4.1\n\\ No newline at end of file\n+Run in terminal Terminal :npm install --save-dev @babel/core@^7.0.0 @babel/preset-env@^7.0.0 babel-jest@^26.0.0 jest@^26.0.0 jest-puppeteer@^5.0.0 puppeteer@^5.4.1 \n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1686006333466,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,2 +1,2 @@\n Download libraries \r\n-Run in terminal Terminal :npm install --save-dev @babel/core@^7.0.0 @babel/preset-env@^7.0.0 babel-jest@^26.0.0 jest@^26.0.0 jest-puppeteer@^5.0.0 puppeteer@^5.4.1 \n\\ No newline at end of file\n+Run in terminal Terminal :npm install --save-dev @babel/core@^7.0.0 @babel/preset-env@^7.0.0 babel-jest@^26.0.0 jest@^26.0.0 jest-puppeteer@^5.0.0 puppeteer@^5.4.1 \r\n"
+                },
+                {
+                    "date": 1686006346743,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,2 +1,3 @@\n Download libraries \r\n+Run in terminal Terminal : npm install\r\n Run in terminal Terminal :npm install --save-dev @babel/core@^7.0.0 @babel/preset-env@^7.0.0 babel-jest@^26.0.0 jest@^26.0.0 jest-puppeteer@^5.0.0 puppeteer@^5.4.1 \r\n"
+                },
+                {
+                    "date": 1686006351811,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,3 +1,5 @@\n Download libraries \r\n Run in terminal Terminal : npm install\r\n+\r\n+if an\r\n Run in terminal Terminal :npm install --save-dev @babel/core@^7.0.0 @babel/preset-env@^7.0.0 babel-jest@^26.0.0 jest@^26.0.0 jest-puppeteer@^5.0.0 puppeteer@^5.4.1 \r\n"
+                },
+                {
+                    "date": 1686006373078,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,5 +1,5 @@\n Download libraries \r\n Run in terminal Terminal : npm install\r\n \r\n-if an\r\n+if an error occurce try to delete node_modules and run the bellow command\r\n Run in terminal Terminal :npm install --save-dev @babel/core@^7.0.0 @babel/preset-env@^7.0.0 babel-jest@^26.0.0 jest@^26.0.0 jest-puppeteer@^5.0.0 puppeteer@^5.4.1 \r\n"
+                },
+                {
+                    "date": 1686038909791,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,5 +1,5 @@\n Download libraries \r\n-Run in terminal Terminal : npm install\r\n+    Run in terminal Terminal : npm install\r\n \r\n if an error occurce try to delete node_modules and run the bellow command\r\n Run in terminal Terminal :npm install --save-dev @babel/core@^7.0.0 @babel/preset-env@^7.0.0 babel-jest@^26.0.0 jest@^26.0.0 jest-puppeteer@^5.0.0 puppeteer@^5.4.1 \r\n"
+                },
+                {
+                    "date": 1686038915410,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,5 +1,5 @@\n Download libraries \r\n     Run in terminal Terminal : npm install\r\n \r\n-if an error occurce try to delete node_modules and run the bellow command\r\n-Run in terminal Terminal :npm install --save-dev @babel/core@^7.0.0 @babel/preset-env@^7.0.0 babel-jest@^26.0.0 jest@^26.0.0 jest-puppeteer@^5.0.0 puppeteer@^5.4.1 \r\n+    if an error occurce try to delete node_modules and run the bellow command\r\n+    Run in terminal Terminal :npm install --save-dev @babel/core@^7.0.0 @babel/preset-env@^7.0.0 babel-jest@^26.0.0 jest@^26.0.0 jest-puppeteer@^5.0.0 puppeteer@^5.4.1 \r\n"
+                },
+                {
+                    "date": 1686038924410,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,4 +2,6 @@\n     Run in terminal Terminal : npm install\r\n \r\n     if an error occurce try to delete node_modules and run the bellow command\r\n     Run in terminal Terminal :npm install --save-dev @babel/core@^7.0.0 @babel/preset-env@^7.0.0 babel-jest@^26.0.0 jest@^26.0.0 jest-puppeteer@^5.0.0 puppeteer@^5.4.1 \r\n+\r\n+Run Project \n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1686038935011,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,5 +3,6 @@\n \r\n     if an error occurce try to delete node_modules and run the bellow command\r\n     Run in terminal Terminal :npm install --save-dev @babel/core@^7.0.0 @babel/preset-env@^7.0.0 babel-jest@^26.0.0 jest@^26.0.0 jest-puppeteer@^5.0.0 puppeteer@^5.4.1 \r\n \r\n-Run Project \n\\ No newline at end of file\n+Run Project \r\n+    Run in Terminal \n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1686038942255,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,5 +4,5 @@\n     if an error occurce try to delete node_modules and run the bellow command\r\n     Run in terminal Terminal :npm install --save-dev @babel/core@^7.0.0 @babel/preset-env@^7.0.0 babel-jest@^26.0.0 jest@^26.0.0 jest-puppeteer@^5.0.0 puppeteer@^5.4.1 \r\n \r\n Run Project \r\n-    Run in Terminal \n\\ No newline at end of file\n+    Run in Terminal : npm run test\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1686038989562,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,5 +4,6 @@\n     if an error occurce try to delete node_modules and run the bellow command\r\n     Run in terminal Terminal :npm install --save-dev @babel/core@^7.0.0 @babel/preset-env@^7.0.0 babel-jest@^26.0.0 jest@^26.0.0 jest-puppeteer@^5.0.0 puppeteer@^5.4.1 \r\n \r\n Run Project \r\n-    Run in Terminal : npm run test\n\\ No newline at end of file\n+    Run in Terminal : npm run test\r\n+\r\n"
+                },
+                {
+                    "date": 1686039002195,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,4 +6,5 @@\n \r\n Run Project \r\n     Run in Terminal : npm run test\r\n \r\n+- To change \n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1686039027364,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,5 +6,5 @@\n \r\n Run Project \r\n     Run in Terminal : npm run test\r\n \r\n-- To change \n\\ No newline at end of file\n+- To change browser from headless mood to head moo\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1686039037065,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,5 +6,5 @@\n \r\n Run Project \r\n     Run in Terminal : npm run test\r\n \r\n-- To change browser from headless mood to head moo\n\\ No newline at end of file\n+- To change browser from headless mood to head mood change flag in \n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1686039062592,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,5 +6,5 @@\n \r\n Run Project \r\n     Run in Terminal : npm run test\r\n \r\n-- To change browser from headless mood to head mood change flag in ()\n\\ No newline at end of file\n+- To change browser from headless mood to head mood change flag in (jest-puppeteer.config)\n\\ No newline at end of file\n"
                 }
             ],
             "date": 1686005606948,
