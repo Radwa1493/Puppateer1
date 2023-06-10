@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 4,
+            "activePatchIndex": 6,
             "patches": [
                 {
                     "date": 1686004474019,
@@ -24,6 +24,14 @@
                 {
                     "date": 1686361767567,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,14 +2,19 @@\n   \"name\": \"jest-pptr-project\",\n   \"version\": \"1.0.0\",\n   \"description\": \"\",\n   \"main\": \"index.js\",\n-  \"scripts\": {\n+  \"scripts\": {\"devDependencies\": {\n+    \"@babel/core\": \"^7.0.0\",\n+    \"@babel/preset-env\": \"^7.0.0\",\n+    \"babel-jest\": \"^26.0.0\",\n+    \"jest\": \"^26.0.0\",\n+    \"jest-puppeteer\": \"^5.0.0\",\n+    \"puppeteer\": \"^5.4.1\"\n+  }\n     \"test\": \"jest --forceExit\"\n   },\n   \"keywords\": [],\n   \"author\": \"\",\n   \"license\": \"ISC\",\n-  \"dependencies\": {\n-    \n-  }\n+  \n }\n"
+                },
+                {
+                    "date": 1686362603688,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,19 +2,21 @@\n   \"name\": \"jest-pptr-project\",\n   \"version\": \"1.0.0\",\n   \"description\": \"\",\n   \"main\": \"index.js\",\n-  \"scripts\": {\"devDependencies\": {\n+  \"scripts\": {\n+    \"test\": \"jest --forceExit\",\n+    \"test\": \"jest --forceExit --reporters=default --reporters=jest-html-reporters\"\n+  },\n+  \"keywords\": [],\n+  \"author\": \"\",\n+  \"license\": \"ISC\",\n+  \"devDependencies\": {\n     \"@babel/core\": \"^7.0.0\",\n     \"@babel/preset-env\": \"^7.0.0\",\n     \"babel-jest\": \"^26.0.0\",\n     \"jest\": \"^26.0.0\",\n+    \"jest-html-reporters\": \"^3.1.4\",\n     \"jest-puppeteer\": \"^5.0.0\",\n     \"puppeteer\": \"^5.4.1\"\n   }\n-    \"test\": \"jest --forceExit\"\n-  },\n-  \"keywords\": [],\n-  \"author\": \"\",\n-  \"license\": \"ISC\",\n-  \n }\n"
+                },
+                {
+                    "date": 1686362610306,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,9 +4,9 @@\n   \"description\": \"\",\n   \"main\": \"index.js\",\n   \"scripts\": {\n     \"test\": \"jest --forceExit\",\n-    \"test\": \"jest --forceExit --reporters=default --reporters=jest-html-reporters\"\n+    \"test:\": \"jest --forceExit --reporters=default --reporters=jest-html-reporters\"\n   },\n   \"keywords\": [],\n   \"author\": \"\",\n   \"license\": \"ISC\",\n"
                 }
             ],
             "date": 1686004474019,

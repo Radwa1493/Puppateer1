@@ -15,9 +15,9 @@ export default class CatPage {
         await e[rand].click(); // open randam category
       }
 
-    async selectRandamItem(){
-      // Wait for the page to load
-      await page.waitForTimeout(9000)
+ async selectRandamItem(){
+// Wait for the page to load
+await page.waitForTimeout(9000)
 
     // Get list of all Sessel products
     const products = await page.$$("a[href*='/artikel/']");

@@ -9,15 +9,17 @@ const elements ={
 export default class CatPage {
     //Fun select randam category
     async selectRandamCat(){
-        const e = await page.$$(elements.regcatigories); //get array of categories webelements
-        const rand = Math.floor(Math.random() * 30); //get randam number
-        console.log('randam cataloge '+rand); // display the randam number
-        await e[rand].click(); // open randam category
-      }
+      //get array of categories webelements
+        const e = await page.$$(elements.regcatigories);
+        const rand = Math.floor(Math.random() * 30);
+        console.log('randam cataloge '+rand);
+        await e[rand].click();
 
-    async selectRandamItem(){
-      // Wait for the page to load
-      await page.waitForTimeout(9000)
+}
+
+ async selectRandamItem(){
+// Wait for the page to load
+await page.waitForTimeout(9000)
 
     // Get list of all Sessel products
     const products = await page.$$("a[href*='/artikel/']");

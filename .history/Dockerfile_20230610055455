@@ -1,0 +1,20 @@
+FROM node:19.4.0
+
+RUN apt-get update && \
+    apt-get install -y curl unzip xvfb libxi6 libgconf-2-4 && \
+    curl -sS -o - https://dl-ssl.google.com/linux/linux_signing_key.pub | apt-key add && \
+    echo "deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main" >> /etc/apt/sources.list.d/google-chrome.list && \
+    apt-get -y update && \
+    apt-get install -y google-chrome-stable
+
+WORKDIR /app
+
+COPY package*.json ./
+
+RUN npm install
+
+COPY . .
+
+VOLUME [ "C:\Program FilesGoogle/Chrome", "/usr/bin/google-chrome/" ]
+
+CMD [ "npm", "run", "test" ]

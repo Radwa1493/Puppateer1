@@ -3,11 +3,31 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 0,
+            "activePatchIndex": 5,
             "patches": [
                 {
                     "date": 1686361836087,
                     "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1686362888716,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,10 @@\n+FROM node:19.4.0\r\n+\r\n+WORKDIR /app\r\n+\r\n+COPY package*.json ./\r\n+RUN npm install\r\n+\r\n+COPY . .\r\n+\r\n+CMD [\"npm\", \"run\", \"test:report\"]\r\n"
+                },
+                {
+                    "date": 1686363201195,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,11 @@\n+FROM node:19.4.0\r\n+\r\n+WORKDIR /app\r\n+\r\n+COPY package*.json ./\r\n+RUN npm install --save-dev @babel/core@^7.0.0 @babel/preset-env@^7.0.0 babel-jest@^26.0.0 jest@^26.0.0 jest-puppeteer@^5.0.0 puppeteer@^5.4.1 \r\n+\r\n+\r\n+COPY . .\r\n+\r\n+CMD [\"npm\", \"run\", \"test:report\"]\r\n"
+                },
+                {
+                    "date": 1686363233839,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,30 +2,10 @@\n \r\n WORKDIR /app\r\n \r\n COPY package*.json ./\r\n-RUN npm install --save-dev @babel/core@^7.0.0 @babel/preset-env@^7.0.0 babel-jest@^26.0.0 jest@^26.0.0 jest-puppeteer@^5.0.0 puppeteer@^5.4.1 \r\n+RUN npm install --save-dev @babel/core@^7.0.0 @babel/preset-env@^7.0.0 babel-jest@^26.0.0 jest@^26.0.0 jest-puppeteer@^5.0.0 puppeteer@^5.4.1 jest-html-reporters\r\n \r\n \r\n COPY . .\r\n \r\n CMD [\"npm\", \"run\", \"test:report\"]\r\n-FROM node:19.4.0\r\n-\r\n-WORKDIR /app\r\n-\r\n-COPY package*.json ./\r\n-RUN npm install\r\n-\r\n-COPY . .\r\n-\r\n-CMD [\"npm\", \"run\", \"test:report\"]\r\n-FROM node:19.4.0\r\n-\r\n-WORKDIR /app\r\n-\r\n-COPY package*.json ./\r\n-RUN npm install\r\n-\r\n-COPY . .\r\n-\r\n-CMD [\"npm\", \"test\"]\r\n"
+                },
+                {
+                    "date": 1686363246813,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,9 +2,9 @@\n \r\n WORKDIR /app\r\n \r\n COPY package*.json ./\r\n-RUN npm install --save-dev @babel/core@^7.0.0 @babel/preset-env@^7.0.0 babel-jest@^26.0.0 jest@^26.0.0 jest-puppeteer@^5.0.0 puppeteer@^5.4.1 jest-html-reporters@\r\n+RUN npm install --save-dev @babel/core@^7.0.0 @babel/preset-env@^7.0.0 babel-jest@^26.0.0 jest@^26.0.0 jest-puppeteer@^5.0.0 puppeteer@^5.4.1 jest-html-reporters@^3.1.4\r\n \r\n \r\n COPY . .\r\n \r\n"
+                },
+                {
+                    "date": 1686365627074,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,20 @@\n+FROM node:19.4.0\r\n+\r\n+RUN apt-get update && \\\r\n+    apt-get install -y curl unzip xvfb libxi6 libgconf-2-4 && \\\r\n+    curl -sS -o - https://dl-ssl.google.com/linux/linux_signing_key.pub | apt-key add && \\\r\n+    echo \"deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main\" >> /etc/apt/sources.list.d/google-chrome.list && \\\r\n+    apt-get -y update && \\\r\n+    apt-get install -y google-chrome-stable\r\n+\r\n+WORKDIR /app\r\n+\r\n+COPY package*.json ./\r\n+\r\n+RUN npm install\r\n+\r\n+COPY . .\r\n+\r\n+VOLUME [ \"/path/to/chrome\", \"/usr/bin/google-chrome/\" ]\r\n+\r\n+CMD [ \"npm\", \"run\", \"test\" ]\r\n"
                 }
             ],
             "date": 1686361836087,

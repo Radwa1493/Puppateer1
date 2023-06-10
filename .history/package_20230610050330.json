@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "jest --forceExit",
-    "test:report": "jest --forceExit --reporters=default --reporters=jest-html-reporters"
+    "test:": "jest --forceExit --reporters=default --reporters=jest-html-reporters"
   },
   "keywords": [],
   "author": "",

@@ -5,10 +5,6 @@ module.exports = {
 	"testTimeout": 100000,
 	preset: 'jest-puppeteer',
 	testRegex: './*\\.test\\.js$',
-	reporters: [
-		'default',
-		['jest-html-reporters', { publicPath: './test-reports/html-reports' }],
-	  ],
 	// All imported modules in your tests should be mocked automatically
 	// automock: false,
 	// Stop running tests after `n` failures

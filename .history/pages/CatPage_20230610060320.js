@@ -17,7 +17,7 @@ export default class CatPage {
 
     async selectRandamItem(){
       // Wait for the page to load
-      await page.waitForTimeout(9000)
+await page.waitForTimeout(9000)
 
     // Get list of all Sessel products
     const products = await page.$$("a[href*='/artikel/']");
