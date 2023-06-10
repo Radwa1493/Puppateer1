@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 19,
+            "activePatchIndex": 20,
             "patches": [
                 {
                     "date": 1686005606948,
@@ -84,6 +84,10 @@
                 {
                     "date": 1686039062592,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,5 +6,5 @@\n \r\n Run Project \r\n     Run in Terminal : npm run test\r\n \r\n-- To change browser from headless mood to head mood change flag in ()\n\\ No newline at end of file\n+- To change browser from headless mood to head mood change flag in (jest-puppeteer.config)\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1686356317200,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,18 @@\n+Download libraries \r\n+    Run in terminal Terminal : npm install\r\n+\r\n+    if an error occurce try to delete node_modules and run the bellow command\r\n+    Run in terminal Terminal :npm install --save-dev @babel/core@^7.0.0 @babel/preset-env@^7.0.0 babel-jest@^26.0.0 jest@^26.0.0 jest-puppeteer@^5.0.0 puppeteer@^5.4.1 \r\n+\r\n+Project structure \r\n+    Puppateer1/\r\n+    ├── api.test.js/      > Test class\r\n+\r\n+\r\n+- To change browser from headless mood to head mood change flag \"headless \" in (jest-puppeteer.config) to false -> \theadless: false \r\n+\r\n+Run Project \r\n+    Run in Terminal : npm run test\r\n+\r\n+\r\n+\r\n"
                 }
             ],
             "date": 1686005606948,

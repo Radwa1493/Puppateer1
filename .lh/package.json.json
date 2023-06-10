@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 3,
+            "activePatchIndex": 4,
             "patches": [
                 {
                     "date": 1686004474019,
@@ -20,6 +20,10 @@
                 {
                     "date": 1686005366222,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -9,12 +9,7 @@\n   \"keywords\": [],\n   \"author\": \"\",\n   \"license\": \"ISC\",\n   \"dependencies\": {\n-    \"@babel/core\": \"^7.22.1\",\n-    \"@babel/preset-env\": \"^7.22.1\",\n-    \"babel-jest\": \"^29.5.0\",\n-    \"jest\": \"^29.5.0\",\n-    \"jest-puppeteer\": \"^^29.5.0\",\n-    \"puppeteer\": \"^20.5.0\"\n+    \n   }\n }\n"
+                },
+                {
+                    "date": 1686361767567,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,14 +2,19 @@\n   \"name\": \"jest-pptr-project\",\n   \"version\": \"1.0.0\",\n   \"description\": \"\",\n   \"main\": \"index.js\",\n-  \"scripts\": {\n+  \"scripts\": {\"devDependencies\": {\n+    \"@babel/core\": \"^7.0.0\",\n+    \"@babel/preset-env\": \"^7.0.0\",\n+    \"babel-jest\": \"^26.0.0\",\n+    \"jest\": \"^26.0.0\",\n+    \"jest-puppeteer\": \"^5.0.0\",\n+    \"puppeteer\": \"^5.4.1\"\n+  }\n     \"test\": \"jest --forceExit\"\n   },\n   \"keywords\": [],\n   \"author\": \"\",\n   \"license\": \"ISC\",\n-  \"dependencies\": {\n-    \n-  }\n+  \n }\n"
                 }
             ],
             "date": 1686004474019,

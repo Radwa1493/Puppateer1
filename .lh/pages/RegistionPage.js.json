@@ -1,0 +1,30 @@
+{
+    "sourceFile": "pages/RegistionPage.js",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 3,
+            "patches": [
+                {
+                    "date": 1686357421516,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1686357436910,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,8 +3,9 @@\n \r\n let PasswprdGen\r\n let textGen\r\n let emailGen\r\n+// Home Page Locators\r\n \r\n const elements ={\r\n     registration_Buttom:'button#registerAccount',\r\n     Gender_DropDown:'#salutation', \r\n"
+                },
+                {
+                    "date": 1686357450886,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,9 +3,9 @@\n \r\n let PasswprdGen\r\n let textGen\r\n let emailGen\r\n-// Home Page Locators\r\n+// Registration Page Locators\r\n const elements ={\r\n     registration_Buttom:'button#registerAccount',\r\n     Gender_DropDown:'#salutation', \r\n     FristName:'#firstName',\r\n"
+                },
+                {
+                    "date": 1686357466306,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -18,8 +18,9 @@\n     submit:'#register-submit',\r\n  }\r\n \r\n export default class RegistionPage extends BasePage {\r\n+    \r\n     async isRegisterPageDisplayed(){\r\n         await page.waitForSelector(elements.Gender_DropDown)    \r\n     }\r\n \r\n"
+                }
+            ],
+            "date": 1686357421516,
+            "name": "Commit-0",
+            "content": "import BasePage from './BasePage'\r\nimport {  Gender, TextGenerator ,PasswordGenerator, } from '../config'\r\n\r\nlet PasswprdGen\r\nlet textGen\r\nlet emailGen\r\n\r\nconst elements ={\r\n    registration_Buttom:'button#registerAccount',\r\n    Gender_DropDown:'#salutation', \r\n    FristName:'#firstName',\r\n    LastName:'#lastName',\r\n    Email:'#email',\r\n    Passwprd:'#password',\r\n    Password2:'#password2',\r\n    Checkbox1:'div.accountNew__newsletterCheckbox > div > div > span.checkbox__checkbox.checkbox__checkbox--alignTop',\r\n    Checkbox2:'div.accountNew__agbCheckbox > div > div > span.checkbox__checkbox.checkbox__checkbox--alignTop',\r\n    submit:'#register-submit',\r\n }\r\n\r\nexport default class RegistionPage extends BasePage {\r\n    async isRegisterPageDisplayed(){\r\n        await page.waitForSelector(elements.Gender_DropDown)    \r\n    }\r\n\r\n    async openRegisterPage(){\r\n        await page.waitForSelector(elements.registration_Buttom)    \r\n      \r\n        await page.goto(' https://www.moebel-kraft.de/registrierung')\r\n      //  await page.click(elements.registration_Buttom)  // sometimes not click \r\n\r\n    }\r\n    async enterNewUserData(){\r\n        PasswprdGen = PasswordGenerator()\r\n        textGen = TextGenerator()\r\n        emailGen = textGen+'@'+textGen+'.com'\r\n        await page.waitForSelector(elements.Gender_DropDown)    \r\n        await page.select(elements.Gender_DropDown, Gender);\r\n       // await page.select(elements.Gender_DropDown,'Frau')\r\n        console.log('Frist Name : '+ textGen)\r\n        await page.type(elements.FristName,textGen)\r\n        console.log('Last Name : '+ textGen)\r\n        await page.type(elements.LastName,textGen)\r\n        console.log('Email : '+ emailGen)\r\n        await page.type(elements.Email,textGen+'@'+textGen+'.com')\r\n        console.log('Password : '+ PasswprdGen )\r\n        await page.type(elements.Passwprd,PasswprdGen)\r\n        console.log('Password2 : '+ PasswprdGen)\r\n        await page.type(elements.Password2,PasswprdGen)\r\n        await page.click(elements.Checkbox1) ;\r\n        await page.click(elements.Checkbox2) ;\r\n        await page.click(elements.submit) ;\r\n  await page.waitForNavigation({ waitUntil: 'networkidle0' });\r\n    }\r\n\r\n    // get mail used in registration \r\n    getmail(){ return emailGen   } \r\n    // get password used in registration \r\n    getpassword(){ return PasswprdGen   } \r\n\r\n}"
+        }
+    ]
+}
