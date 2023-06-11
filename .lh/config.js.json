@@ -1,0 +1,26 @@
+{
+    "sourceFile": "config.js",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 2,
+            "patches": [
+                {
+                    "date": 1686401005306,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1686401014421,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -11,9 +11,9 @@\n         for (var i = 0; i < 5; i++)\n           text += charset.charAt(Math.floor(Math.random() * charset.length));    \n           return text; \n }\n-export    \n+export c   \n export const PasswordGenerator = function(){\n         const length = 12; // Set the length of the password\n         const lowercaseChars = 'abcdefghijklmnopqrstuvwxyz';\n         const uppercaseChars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';\n"
+                },
+                {
+                    "date": 1686401030134,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -11,9 +11,11 @@\n         for (var i = 0; i < 5; i++)\n           text += charset.charAt(Math.floor(Math.random() * charset.length));    \n           return text; \n }\n-export const randamnum = function(){}   \n+export const randamnum = function(){\n+  \n+}   \n export const PasswordGenerator = function(){\n         const length = 12; // Set the length of the password\n         const lowercaseChars = 'abcdefghijklmnopqrstuvwxyz';\n         const uppercaseChars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';\n"
+                }
+            ],
+            "date": 1686401005306,
+            "name": "Commit-0",
+            "content": "export const timeout = 60000\nexport const Url =\"https://www.moebel-kraft.de/\";\nexport const ProfileUrl ='https://www.moebel-kraft.de/kundenkonto';\nexport const logoutUrl ='https://www.moebel-kraft.de/bestellung/logout';\nexport const InValidPassword =\"wrongpassword\";\nexport const Gender =\"female\";\n\nexport const TextGenerator= function(){\n        var text = \"\";\n        var charset = \"abcdefghijklmnopqrstuvwxyz\";\n        for (var i = 0; i < 5; i++)\n          text += charset.charAt(Math.floor(Math.random() * charset.length));    \n          return text; \n}\n   \nexport const PasswordGenerator = function(){\n        const length = 12; // Set the length of the password\n        const lowercaseChars = 'abcdefghijklmnopqrstuvwxyz';\n        const uppercaseChars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';\n        const numberChars = '0123456789';\n        const specialChars = '!@#$%^&*()_+-=[]{}|;:,.<>?';\n      \n        let password = '';\n        \n        // Generate at least one of each required character type\n        password += lowercaseChars.charAt(Math.floor(Math.random() * lowercaseChars.length));\n        password += uppercaseChars.charAt(Math.floor(Math.random() * uppercaseChars.length));\n        password += numberChars.charAt(Math.floor(Math.random() * numberChars.length));\n        password += specialChars.charAt(Math.floor(Math.random() * specialChars.length));\n      \n        // Fill up the rest of the password with random characters\n        for (let i = 4; i < length; i++) {\n          const charType = Math.floor(Math.random() * 4); // 0: lowercase, 1: uppercase, 2: number, 3: special\n      \n          switch (charType) {\n            case 0:\n              password += lowercaseChars.charAt(Math.floor(Math.random() * lowercaseChars.length));\n              break;\n            case 1:\n              password += uppercaseChars.charAt(Math.floor(Math.random() * uppercaseChars.length));\n              break;\n            case 2:\n              password += numberChars.charAt(Math.floor(Math.random() * numberChars.length));\n              break;\n            case 3:\n              password += specialChars.charAt(Math.floor(Math.random() * specialChars.length));\n              break;\n          }\n        }\n        return password;\n    }    \n    \n    \n"
+        }
+    ]
+}

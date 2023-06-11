@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 20,
+            "activePatchIndex": 30,
             "patches": [
                 {
                     "date": 1686358155872,
@@ -88,6 +88,46 @@
                 {
                     "date": 1686358741659,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -37,10 +37,10 @@\n     }\r\n     //fun open registration page\r\n     async openRegisterPage(){\r\n         await page.waitForSelector(elements.registration_Buttom)    \r\n-      await page.goto(' https://www.moebel-kraft.de/registrierung') // open registration through the url\r\n-        await page.click(elements.registration_Buttom)  //open registration by click on registration buttion - sometimes not working\r\n+        await page.goto(' https://www.moebel-kraft.de/registrierung') // open registration through the url\r\n+     await page.click(elements.registration_Buttom)  //open registration by click on registration buttion - sometimes not working\r\n     }    \r\n     //fun for logout\r\n     async Logout(){\r\n /*        \r\n"
+                },
+                {
+                    "date": 1686400538569,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -26,9 +26,9 @@\n        await page.click(elements.submit_TxtBox)\r\n     }\r\n     async isInvalidloginError(){\r\n         await page.waitForSelector(elements.error_Txt)\r\n-        expect(elements.error_Txt).not.toBeNull();\r\n+        expect(elements.error_Txt).not.toBeNull(); // assert that \r\n \r\n     }\r\n     \r\n     async OpenRegisterPage(){\r\n@@ -38,9 +38,9 @@\n     //fun open registration page\r\n     async openRegisterPage(){\r\n         await page.waitForSelector(elements.registration_Buttom)    \r\n         await page.goto(' https://www.moebel-kraft.de/registrierung') // open registration through the url\r\n-     await page.click(elements.registration_Buttom)  //open registration by click on registration buttion - sometimes not working\r\n+//      await page.click(elements.registration_Buttom)  //open registration by click on registration buttion - sometimes not working\r\n     }    \r\n     //fun for logout\r\n     async Logout(){\r\n /*        \r\n"
+                },
+                {
+                    "date": 1686400546931,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -26,9 +26,9 @@\n        await page.click(elements.submit_TxtBox)\r\n     }\r\n     async isInvalidloginError(){\r\n         await page.waitForSelector(elements.error_Txt)\r\n-        expect(elements.error_Txt).not.toBeNull(); // assert that \r\n+        expect(elements.error_Txt).not.toBeNull(); // assert that Error message displayed\r\n \r\n     }\r\n     \r\n     async OpenRegisterPage(){\r\n"
+                },
+                {
+                    "date": 1686400554372,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -26,9 +26,9 @@\n        await page.click(elements.submit_TxtBox)\r\n     }\r\n     async isInvalidloginError(){\r\n         await page.waitForSelector(elements.error_Txt)\r\n-        expect(elements.error_Txt).not.toBeNull(); // assert that Error message displayed\r\n+        expect(elements.error_Txt).not.toBeNull(); \r\n \r\n     }\r\n     \r\n     async OpenRegisterPage(){\r\n"
+                },
+                {
+                    "date": 1686400592499,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -12,9 +12,9 @@\n     logout_button:  '.sidebarNavigation__rootChild' \r\n  }\r\n \r\n export default class ProfilePage extends BasePage {\r\n-\r\n+    // wait till \r\n     async isLoginPageDisplayed(){\r\n         await page.waitForSelector(elements.loginEmail_TxtBox)     \r\n     }\r\n \r\n@@ -24,8 +24,9 @@\n        await page.type(elements.loginEmail_TxtBox,email)\r\n        await page.type(elements.loginPass_TxtBox,password)\r\n        await page.click(elements.submit_TxtBox)\r\n     }\r\n+    // assert that Error message displayed\r\n     async isInvalidloginError(){\r\n         await page.waitForSelector(elements.error_Txt)\r\n         expect(elements.error_Txt).not.toBeNull(); \r\n \r\n"
+                },
+                {
+                    "date": 1686400603118,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -12,9 +12,9 @@\n     logout_button:  '.sidebarNavigation__rootChild' \r\n  }\r\n \r\n export default class ProfilePage extends BasePage {\r\n-    // wait till \r\n+    // wait till profile page displayed\r\n     async isLoginPageDisplayed(){\r\n         await page.waitForSelector(elements.loginEmail_TxtBox)     \r\n     }\r\n \r\n"
+                },
+                {
+                    "date": 1686400617468,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -12,9 +12,9 @@\n     logout_button:  '.sidebarNavigation__rootChild' \r\n  }\r\n \r\n export default class ProfilePage extends BasePage {\r\n-    // wait till profile page displayed\r\n+    // fun wait till profile page displayed\r\n     async isLoginPageDisplayed(){\r\n         await page.waitForSelector(elements.loginEmail_TxtBox)     \r\n     }\r\n \r\n"
+                },
+                {
+                    "date": 1686400626986,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -16,9 +16,9 @@\n     // fun wait till profile page displayed\r\n     async isLoginPageDisplayed(){\r\n         await page.waitForSelector(elements.loginEmail_TxtBox)     \r\n     }\r\n-\r\n+    //fun enter credin\r\n     async EnterCredinial(email,password){\r\n    // await page.click(elements.lgoin_Buttom) ;\r\n        await page.$eval(elements.loginEmail_TxtBox, input => input.value = ''); // Clear the text from the field\r\n        await page.type(elements.loginEmail_TxtBox,email)\r\n"
+                },
+                {
+                    "date": 1686400632599,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -16,9 +16,9 @@\n     // fun wait till profile page displayed\r\n     async isLoginPageDisplayed(){\r\n         await page.waitForSelector(elements.loginEmail_TxtBox)     \r\n     }\r\n-    //fun enter credin\r\n+    //fun enter \r\n     async EnterCredinial(email,password){\r\n    // await page.click(elements.lgoin_Buttom) ;\r\n        await page.$eval(elements.loginEmail_TxtBox, input => input.value = ''); // Clear the text from the field\r\n        await page.type(elements.loginEmail_TxtBox,email)\r\n"
+                },
+                {
+                    "date": 1686400638290,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -16,9 +16,9 @@\n     // fun wait till profile page displayed\r\n     async isLoginPageDisplayed(){\r\n         await page.waitForSelector(elements.loginEmail_TxtBox)     \r\n     }\r\n-    //fun enter credini\r\n+    //fun enter credinia\r\n     async EnterCredinial(email,password){\r\n    // await page.click(elements.lgoin_Buttom) ;\r\n        await page.$eval(elements.loginEmail_TxtBox, input => input.value = ''); // Clear the text from the field\r\n        await page.type(elements.loginEmail_TxtBox,email)\r\n"
+                },
+                {
+                    "date": 1686400789511,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,56 @@\n+import BasePage from './BasePage'\r\n+import {  logoutUrl } from '../config'\r\n+\r\n+const elements ={\r\n+    lgoin_Buttom:'.headerElement__icon--login',\r\n+    loginEmail_TxtBox:  '#loginEmail' ,\r\n+    loginPass_TxtBox:  '#loginPassword' ,\r\n+    submit_TxtBox:  '#login-submit' ,\r\n+    error_Txt:  '#loginEmail-error' ,\r\n+    registration_Buttom:'button#registerAccount',\r\n+    welcome_TXT:'.titleHeadline',\r\n+    logout_button:  '.sidebarNavigation__rootChild' \r\n+ }\r\n+\r\n+export default class ProfilePage extends BasePage {\r\n+    // fun wait till profile page displayed\r\n+    async isLoginPageDisplayed(){\r\n+        await page.waitForSelector(elements.loginEmail_TxtBox)     \r\n+    }\r\n+    //fun enter credinial for login \r\n+    async EnterCredinial(email,password){\r\n+   // await page.click(elements.lgoin_Buttom) ;\r\n+       await page.$eval(elements.loginEmail_TxtBox, input => input.value = ''); // Clear the text from the field\r\n+       await page.type(elements.loginEmail_TxtBox,email) //set email\r\n+       await page.type(elements.loginPass_TxtBox,password) // set password\r\n+       await page.click(elements.submit_TxtBox) //submit\r\n+    }\r\n+    // assert that Error message displayed\r\n+    async isInvalidloginError(){\r\n+        await page.waitForSelector(elements.error_Txt)\r\n+        expect(elements.error_Txt).not.toBeNull(); \r\n+\r\n+    }\r\n+    //\r\n+    async OpenRegisterPage(){\r\n+     await page.click(elements.registration_Buttom)\r\n+\r\n+    }\r\n+    //fun open registration page\r\n+    async openRegisterPage(){\r\n+        await page.waitForSelector(elements.registration_Buttom)    \r\n+        await page.goto(' https://www.moebel-kraft.de/registrierung') // open registration through the url\r\n+//      await page.click(elements.registration_Buttom)  //open registration by click on registration buttion - sometimes not working\r\n+    }    \r\n+    //fun for logout\r\n+    async Logout(){\r\n+/*        \r\n+     // Scroll down the page by the height of the viewport\r\n+        await page.evaluate(() => {\r\n+        window.scrollBy(0, window.innerHeight);\r\n+    })\r\n+        await page.click(elements.logout_button)\r\n+*/\r\n+        await page.goto(logoutUrl); // open logout page      \r\n+\r\n+    }}\n\\ No newline at end of file\n"
                 }
             ],
             "date": 1686358155872,

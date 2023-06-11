@@ -1,0 +1,42 @@
+{
+    "sourceFile": "pages/BasePage.js",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 6,
+            "patches": [
+                {
+                    "date": 1686399912859,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1686401871797,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,14 @@\n+export default class BasePage {\n+\n+\tasync wait(time) {\n+\t\tawait page.waitFor(time)\n+\t}\n+\t//Fun to get page title\n+\tasync getTitle() {\n+\t\treturn await page.title()\n+\t}\n+\n+\tasync getUrl() {\n+\t\treturn await page.url()\n+\t}\n+}\n"
+                },
+                {
+                    "date": 1686401877379,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,27 +2,13 @@\n \n \tasync wait(time) {\n \t\tawait page.waitFor(time)\n \t}\n-\t//Fun to get page title\n+\t//Fun to get web page title\n \tasync getTitle() {\n \t\treturn await page.title()\n \t}\n \n \tasync getUrl() {\n \t\treturn await page.url()\n \t}\n }\n-export default class BasePage {\n-\t\n-\tasync wait(time) {\n-\t\tawait page.waitFor(time)\n-\t}\n-\n-\tasync getTitle() {\n-\t\treturn await page.title()\n-\t}\n-\n-\tasync getUrl() {\n-\t\treturn await page.url()\n-\t}\n-}\n"
+                },
+                {
+                    "date": 1686403399276,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,17 @@\n+export default class BasePage {\n+\n+\tasync wait(time) {\n+\t\tawait page.waitFor(time)\n+\t}\n+\tasync wait(time) {\n+\t\tawait page.waitFor(time)\n+\t}\n+\t//Fun to get web page title\n+\tasync getTitle() {\n+\t\treturn await page.title()\n+\t}\n+\n+\tasync getUrl() {\n+\t\treturn await page.url()\n+\t}\n+}\n"
+                },
+                {
+                    "date": 1686403407844,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,9 +2,9 @@\n \n \tasync wait(time) {\n \t\tawait page.waitFor(time)\n \t}\n-\tasync wait(time) {\n+\tasync waitselector(e) {\n \t\tawait page.waitFor(time)\n \t}\n \t//Fun to get web page title\n \tasync getTitle() {\n@@ -14,18 +14,4 @@\n \tasync getUrl() {\n \t\treturn await page.url()\n \t}\n }\n-export default class BasePage {\n-\n-\tasync wait(time) {\n-\t\tawait page.waitFor(time)\n-\t}\n-\t//Fun to get web page title\n-\tasync getTitle() {\n-\t\treturn await page.title()\n-\t}\n-\n-\tasync getUrl() {\n-\t\treturn await page.url()\n-\t}\n-}\n"
+                },
+                {
+                    "date": 1686403421900,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,10 +2,12 @@\n \n \tasync wait(time) {\n \t\tawait page.waitFor(time)\n \t}\n-\tasync waitselector(e) {\n+\tasync waitselector(css) {\n \t\tawait page.waitFor(time)\n+\t\tawait page.waitForSelector(elements.Cookies_Buttom) ;\n+\n \t}\n \t//Fun to get web page title\n \tasync getTitle() {\n \t\treturn await page.title()\n"
+                },
+                {
+                    "date": 1686403427861,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,9 +4,9 @@\n \t\tawait page.waitFor(time)\n \t}\n \tasync waitselector(css) {\n \t\tawait page.waitFor(time)\n-\t\tawait page.waitForSelector() \n+\t\tawait page.waitForSelector(c) \n \n \t}\n \t//Fun to get web page title\n \tasync getTitle() {\n"
+                }
+            ],
+            "date": 1686399912859,
+            "name": "Commit-0",
+            "content": "export default class BasePage {\n\t\n\tasync wait(time) {\n\t\tawait page.waitFor(time)\n\t}\n\n\tasync getTitle() {\n\t\treturn await page.title()\n\t}\n\n\tasync getUrl() {\n\t\treturn await page.url()\n\t}\n}\n"
+        }
+    ]
+}
