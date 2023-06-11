@@ -35,9 +35,8 @@ export default class CatPage {
 
       const rand = randamnum(products.length) //get randam item
       selected.push(rand)
-
-      //remove added tp fav item from list of products
-      if (i>0){ 
+      
+      if (i>0){
         for (let j = 0; j <selected.length ; j++) { //loop 5 times     
 
         products.splice(selected[j], 1); //remove rand item from list of elemnts

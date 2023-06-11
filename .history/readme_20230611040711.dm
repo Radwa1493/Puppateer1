@@ -13,7 +13,7 @@ Project structure
             ├──Test suite for shopping -> select randam 5 item from randam category and add them in wishlist , display items name and total expected price
     ├── config.js/        > Test Data class
     ├── html-reports    
-        ├──jest_html_reporters.html      > HTML report 
+        ├──jest_html_reporters.html               > HTML report 
     ├── pages
         ├── RegistionPage.js
         ├── ProfilePage.js
@@ -26,8 +26,8 @@ Project structure
 in (jest-puppeteer.config) to false -> 	headless: false 
 
 Run Project 
-    Run in Terminal : npm run test
-    After run report created in ->  html-reports\jest_html_reporters.html 
+    Run in Terminal : npm run test:report
+    After run jest_html_reporters.html will created on the project root
 
 Run on docker 
     1)open docker desktop

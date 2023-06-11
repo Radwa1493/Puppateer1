@@ -27,7 +27,7 @@ in (jest-puppeteer.config) to false -> 	headless: false
 
 Run Project 
     Run in Terminal : npm run test
-    After run report created in ->  html-reports\jest_html_reporters.html 
+    After run jest_html_reporters.html will created on the project root
 
 Run on docker 
     1)open docker desktop
