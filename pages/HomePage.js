@@ -1,5 +1,3 @@
-import BasePage from './BasePage'
-
 // Home Page Locators
   const elements ={
     Cookies_Buttom:'div.consentForm__acceptButton:nth-child(2) > button',
@@ -7,7 +5,7 @@ import BasePage from './BasePage'
     loginstatus_Flag:  '.headerElement__status--login' ,
     Homelinks :'.htmlTile center a'
     }
-  export default class HomePage extends BasePage {
+  export default class HomePage {
     //Fun wait till cookies displayed
     async isHomePageDisplayed(){
       await page.waitForSelector(elements.Cookies_Buttom) ;

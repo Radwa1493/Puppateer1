@@ -1,6 +1,5 @@
-import BasePage from './BasePage'
 import {  logoutUrl } from '../config'
-
+// Profile Page Locators
 const elements ={
     lgoin_Buttom:'.headerElement__icon--login',
     loginEmail_TxtBox:  '#loginEmail' ,
@@ -12,28 +11,28 @@ const elements ={
     logout_button:  '.sidebarNavigation__rootChild' 
  }
 
-export default class ProfilePage extends BasePage {
-
+export default class ProfilePage {
+    // fun wait till profile page displayed
     async isLoginPageDisplayed(){
         await page.waitForSelector(elements.loginEmail_TxtBox)     
     }
-
+    //fun enter credinial for login 
     async EnterCredinial(email,password){
    // await page.click(elements.lgoin_Buttom) ;
-       await page.$eval(elements.loginEmail_TxtBox, input => input.value = ''); // Clear the text from the field
-       await page.type(elements.loginEmail_TxtBox,email)
-       await page.type(elements.loginPass_TxtBox,password)
-       await page.click(elements.submit_TxtBox)
+       await page.$eval(elements.loginEmail_TxtBox, input => input.value = ''); // Clear email field
+       await page.type(elements.loginEmail_TxtBox,email) //set email
+       await page.$eval(elements.loginPass_TxtBox, input => input.value = ''); // Clear password field
+       await page.type(elements.loginPass_TxtBox,password) // set password
+       await page.click(elements.submit_TxtBox) //submit
     }
+    // assert that Error message displayed
     async isInvalidloginError(){
         await page.waitForSelector(elements.error_Txt)
-        expect(elements.error_Txt).not.toBeNull();
-
+        expect(elements.error_Txt).not.toBeNull(); 
     }
-    
+    //fun open registration page
     async OpenRegisterPage(){
      await page.click(elements.registration_Buttom)
-
     }
     //fun open registration page
     async openRegisterPage(){
@@ -51,5 +50,4 @@ export default class ProfilePage extends BasePage {
         await page.click(elements.logout_button)
 */
         await page.goto(logoutUrl); // open logout page      
-
     }}

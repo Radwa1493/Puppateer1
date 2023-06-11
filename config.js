@@ -1,10 +1,9 @@
-export const timeout = 60000
+export const timeout = 150000
 export const Url ="https://www.moebel-kraft.de/";
 export const ProfileUrl ='https://www.moebel-kraft.de/kundenkonto';
 export const logoutUrl ='https://www.moebel-kraft.de/bestellung/logout';
 export const InValidPassword ="wrongpassword";
 export const Gender ="female";
-
 export const TextGenerator= function(){
         var text = "";
         var charset = "abcdefghijklmnopqrstuvwxyz";
@@ -12,7 +11,9 @@ export const TextGenerator= function(){
           text += charset.charAt(Math.floor(Math.random() * charset.length));    
           return text; 
 }
-   
+export const randamnum = function(length){
+  return Math.floor(Math.random() * length);
+}   
 export const PasswordGenerator = function(){
         const length = 12; // Set the length of the password
         const lowercaseChars = 'abcdefghijklmnopqrstuvwxyz';
@@ -49,4 +50,10 @@ export const PasswordGenerator = function(){
         }
         return password;
     }    
-    
+    export const getNumberAfterComma = function(inputString){
+        // replace all non-numeric characters with an empty string
+        const numericString = inputString.replace(/[^0-9]/g, '');
+       // convert the resulting string to a number and return it
+       return Number(numericString);
+   
+  }

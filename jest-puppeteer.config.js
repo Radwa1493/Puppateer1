@@ -1,7 +1,7 @@
 module.exports = {
 	launch: {
-		headless: true,
-		args: ['--start-maximized']
+		headless: false,
+		args: ['--start-maximized','--no-sandbox', '--disable-setuid-sandbox'],
 
 	},
 	browserContext: 'default',

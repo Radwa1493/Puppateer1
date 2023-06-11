@@ -1,102 +1,81 @@
+import {  randamnum, getNumberAfterComma } from '../config'
+let totalprice = 0
+let Items = []
+let selected = []
 // Category Page Locators
 const elements ={
     regcatigories:'a.link-roompages',
-    Items1: 'div.sc-105y4a6-0 > div:nth-child(9)',
-    Items2: 'div.sc-105y4a6-0 > div:nth-child(10)',
-    wishlist:'.headerElement__icon--wishlist'
+    ItemName1:'span.articleFullName__specification:nth-child(1)',
+    ItemName2:'span.articleFullName__name:nth-child(2)',
+    wishlist:'.headerElement__icon--wishlist',
+    price:'.priceNew--row',
+    itemFav:'div.wishlistIcon:nth-child(1)',
+    prudectselment:"a[href*='/artikel/']"
+
  }
 
 export default class CatPage {
     //Fun select randam category
     async selectRandamCat(){
         const e = await page.$$(elements.regcatigories); //get array of categories webelements
-        const rand = Math.floor(Math.random() * 30); //get randam number
+        const rand = randamnum(30); //get randam number
         console.log('randam cataloge '+rand); // display the randam number
         await e[rand].click(); // open randam category
       }
-
+    
+    //Fun select randam Item
     async selectRandamItem(){
-      // Wait for the page to load
-      await page.waitForTimeout(9000)
+      await page.waitForTimeout(3000) //wait
 
-    // Get list of all Sessel products
-    const products = await page.$$("a[href*='/artikel/']");
-    const rand = Math.floor(Math.random() * products.length);
-    console.log('randam item '+rand);
-          // Scroll down the page by the height of the viewport
-await page.evaluate(() => {
-    window.scrollBy(0, window.innerHeight);
-  });
-  let count = 0
-  do {
-    await products[rand].click();
-    products.splice(rand, 1);
-    await page.waitForTimeout(2000)
+    for (let i = 0; i < 5; i++) { //loop 5 times     
 
-  //  await page.waitForSelector('div.wishlistIcon:nth-child(1)')
-    await page.click('div.wishlistIcon:nth-child(1)')
-   // await page.waitForTimeout(3000)
+      await page.waitForTimeout(3000) //wait
 
-   const priceElement = await page.$('.priceNew--row');
-   const text = await page.evaluate(priceElement => priceElement.textContent, priceElement);
-   console.log(text);
+      const products = await page.$$("a[href*='/artikel/']"); //get all items in array of web of elements
 
+      const rand = randamnum(products.length) //get randam item
+      selected.push(rand)
+      if (i>0){
+        products.splice(selected[i], 1); //remove rand item from list of elemnts
+      }
+      console.log('Randam item number : '+rand); // display rand item number 
+      
+      await products[rand].click(); // open rand item
+      await page.waitForSelector(elements.itemFav) // wait
+      await page.click(elements.itemFav) //add to wish list
 
-   
-    await page.click('.headerElement__icon--wishlist')
-    await page.waitForTimeout(9000)
-    //await page.back();
-    await page.goBack();
-        await page.goBack();
+      const priceElement = await page.$(elements.price);  //price element 
+      const name1Element = await page.$(elements.ItemName1); //name1 element
+  //   const name2Element = await page.$(elements.ItemName2); //name2 element
 
-    await page.waitForTimeout(9000)
+      const price = await page.evaluate(priceElement => priceElement.textContent, priceElement); // get price in text
+      const itemName1Text = await page.evaluate(name1Element => name1Element.textContent, name1Element);// get item name1 in text
+  //    const itemName2Text = await page.evaluate(name2Element => name2Element.textContent, name2Element);// get item name1 in text
 
+     const ItemName = itemName1Text //+" "+ itemName2Text
+      console.log("Item : "+ItemName+" - price : "+price); //display the price
+      totalprice=totalprice+getNumberAfterComma(price)
+      Items.push(ItemName); // add the ItemName to the Items array
 
-    count++;
-  } while (count < 4);
+      await page.goBack();
 
+}
+    console.log("Items: "+Items)
+    await page.waitForTimeout(2000) //wait
 
+    console.log("Total Expected Price : "+totalprice)
+    // Scroll to the top of the page
+    await page.evaluate(() => {
+      window.scrollTo(0, 0);
+    });
+//  await page.click(elements.wishlist) //open wish list
 
-    
-    
-
-/*
- // Scroll down the page by the height of the viewport
-      await page.evaluate(() => {
-        window.scrollBy(0, window.innerHeight);
-      });
-    const i1 = await page.$$('div.sc-105y4a6-0 > div:nth-child(9)');
-        const i2 = await page.$$('div.sc-105y4a6-0 > div:nth-child(10)');
-        const combined = [...i1, ...i2];
-        const rand = Math.floor(Math.random() * i1.length+1);
-        console.log('randam item '+rand);
-        await i1[rand].click();
-
-/*
-      // Scroll down the page by the height of the viewport
-      await page.evaluate(() => {
-        window.scrollBy(0, window.innerHeight);
-      });
-      */
-        
-     //  const rand = Math.floor(Math.random() * 30);
-      //  console.log(rand);
-      //  await combined[rand].click();       
- //     while (i1.length < 5) {
-   //     const randomIndex = Math.floor(Math.random() * i1.length);
-    //    await combined[randomIndex].click();
-     //   combined.splice(0, randomIndex);
-   //   }
-     // Scroll to the top of the page
- 
- /*    await page.evaluate(() => {
-    window.scrollTo(0, 0);
-  });
-  */
-
- //     await page.click(elements.wishlist)
+    await page.click('.headerElement__icon--wishlist') //open wish list
 
 
 }
+   // get expected total price  
+   getmail(){ return totalprice   } 
+
 
 }
