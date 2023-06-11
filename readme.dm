@@ -6,14 +6,18 @@ Download libraries
 
 Project structure 
     Puppateer1/
-    ├── end-to-end.test.js/      > Test class
+    ├── tests/      > Test class
+        ├── end-to-end.test.js/      > Test class
+            ├──Test suite for user Registration	
+            ├──Test suite for Login	> inalied and valid
+            ├──Test suite for shopping -> select randam 5 item from randam category and add them in wishlist , display items name and total expected price
     ├── config.js/        > Test Data class
     ├── jest_html_reporters.html    > HTML report 
     ├── pages
-    ├── ├── RegistionPage.js
-    ├── ├── ProfilePage.js
-    ├── ├── HomePage.js
-    ├── ├── CatPage.js
+        ├── RegistionPage.js
+        ├── ProfilePage.js
+        ├── HomePage.js
+        ├── CatPage.js
 
 
 
@@ -28,5 +32,6 @@ Run on docker
     1)open docker desktop
     2)Run in terminal : docker build -t jest-project .
     3)Run in terminal : docker run --rm jest-project
+run on docker not working due to browser initialization 
 
 
