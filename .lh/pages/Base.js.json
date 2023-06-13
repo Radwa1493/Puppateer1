@@ -1,0 +1,270 @@
+{
+    "sourceFile": "pages/Base.js",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 63,
+            "patches": [
+                {
+                    "date": 1686679079489,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1686679089721,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,4 @@\n-import { randamnum, getNumberAfterComma } from '../config';\n-let totalprice = 0;\n-let Items = [];\n-let selected = [];\n \n export default class CatPage {\n   //Fun select randam category\n   async selectRandamCat() {\n"
+                },
+                {
+                    "date": 1686679094922,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,6 +1,6 @@\n \n-export default class CatPage {\n+export default class Base {\n   //Fun select randam category\n   async selectRandamCat() {\n     const e = await page.$$(elements.regcatigories); //get array of categories webelements\n     const rand = randamnum(30); //get randam number\n"
+                },
+                {
+                    "date": 1686679102181,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,8 @@\n \n export default class Base {\n   //Fun select randam category\n-  async selectRandamCat() {\n+  async wait() {\n     const e = await page.$$(elements.regcatigories); //get array of categories webelements\n     const rand = randamnum(30); //get randam number\n     console.log('randam cataloge ' + rand); // display the randam number\n     await e[rand].click(); // open randam category\n"
+                },
+                {
+                    "date": 1686679238897,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,73 +1,9 @@\n \n export default class Base {\n   //Fun select randam category\n-  async wait() {\n+  async wait(time) {\n     const e = await page.$$(elements.regcatigories); //get array of categories webelements\n     const rand = randamnum(30); //get randam number\n     console.log('randam cataloge ' + rand); // display the randam number\n     await e[rand].click(); // open randam category\n   }\n-\n-  //Fun select randam Item\n-  async selectRandamItem() {\n-    await page.waitForTimeout(3000); //wait\n-    \n-    //loop 5 times\n-    for (let i = 0; i < 5; i++) {\n-\n-      await page.waitForTimeout(3000); //wait\n-\n-      const products = await page.$$(\"a[href*='/artikel/']\"); //get all items in array of web of elements\n-\n-      const rand = randamnum(products.length); //get randam item\n-      selected.push(rand);\n-\n-      //remove added tp fav item from list of products\n-      if (i > 0) {\n-        for (let j = 0; j < selected.length; j++) {\n-          products.splice(selected[j], 1); //remove rand item from list of elemnts\n-        }\n-      }\n-      console.log('Randam item number : ' + rand); // display rand item number\n-\n-      await products[rand].click(); // open rand item\n-      await page.waitForSelector(elements.itemFav); // wait\n-      await page.click(elements.itemFav); //add to wish list\n-\n-      const priceElement = await page.$(elements.price); //price element\n-      const name1Element = await page.$(elements.ItemName1); //name1 element\n-      //   const name2Element = await page.$(elements.ItemName2); //name2 element\n-\n-      const price = await page.evaluate(\n-        (priceElement) => priceElement.textContent,\n-        priceElement\n-      ); // get price in text\n-      const itemName1Text = await page.evaluate(\n-        (name1Element) => name1Element.textContent,\n-        name1Element\n-      ); // get item name1 in text\n-      //    const itemName2Text = await page.evaluate(name2Element => name2Element.textContent, name2Element);// get item name1 in text\n-\n-      const ItemName = itemName1Text; //+\" \"+ itemName2Text\n-      console.log('Item : ' + ItemName + ' - price : ' + price); //display the price\n-      totalprice = totalprice + getNumberAfterComma(price);\n-      Items.push(ItemName); // add the ItemName to the Items array\n-\n-      await page.goBack();\n-    }\n-    console.log('Items: ' + Items);\n-    await page.waitForTimeout(2000); //wait\n-\n-    console.log('Total Expected Price : ' + totalprice);\n-    // Scroll to the top of the page\n-    await page.evaluate(() => {\n-      window.scrollTo(0, 0);\n-    });\n-    await page.waitForTimeout(3000); //wait\n-    await page.click('.headerElement__icon--wishlist'); //open wish list\n-  }\n-  // get expected total price\n-  getmail() {\n-    return totalprice;\n-  }\n-}\n"
+                },
+                {
+                    "date": 1686679261464,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,8 @@\n \n export default class Base {\n   //Fun select randam category\n   async wait(time) {\n-    const e = await page.$$(elements.regcatigories); //get array of categories webelements\n-    const rand = randamnum(30); //get randam number\n-    console.log('randam cataloge ' + rand); // display the randam number\n-    await e[rand].click(); // open randam category\n+    await page.waitForTimeout(3000); //wait\n+\n   }\n+}\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1686679267002,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,8 @@\n \n export default class Base {\n   //Fun select randam category\n   async wait(time) {\n-    await page.waitForTimeout(3000); //wait\n+    await page.waitForTimeout(time); //wait\n \n   }\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1686679335674,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,12 @@\n \n export default class Base {\n-  //Fun select randam category\n+\n   async wait(time) {\n     await page.waitForTimeout(time); //wait\n \n   }\n+  async wait(time) {\n+    await page.waitForTimeout(time); //wait\n+\n+  }\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1686679343107,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,12 @@\n+\n+export default class Base {\n+\n+  async wait(time) {\n+    await page.waitForTimeout(time); //wait\n+\n+  }\n+  async scrollup(time) {\n+    await page.waitForTimeout(time); //wait\n+\n+  }\n+}\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1686679354683,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,20 +5,9 @@\n     await page.waitForTimeout(time); //wait\n \n   }\n   async scrollup(time) {\n-    await page.waitForTimeout(time); //wait\n-\n+    await page.evaluate(() => {\n+      window.scrollTo(0, 0);\n+    });\n   }\n-}\n-\n-export default class Base {\n-\n-  async wait(time) {\n-    await page.waitForTimeout(time); //wait\n-\n-  }\n-  async wait(time) {\n-    await page.waitForTimeout(time); //wait\n-\n-  }\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1686679387552,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,9 +4,9 @@\n   async wait(time) {\n     await page.waitForTimeout(time); //wait\n \n   }\n-  async scrollup(time) {\n+  async scrollup() {\n     await page.evaluate(() => {\n       window.scrollTo(0, 0);\n     });\n   }\n"
+                },
+                {
+                    "date": 1686679438368,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -9,5 +9,11 @@\n     await page.evaluate(() => {\n       window.scrollTo(0, 0);\n     });\n   }\n+\n+    // Scroll down the page by the height of the viewport\n+    await page.evaluate(() => {\n+      window.scrollBy(0, window.innerHeight);\n+    });\n+\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1686679443821,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -10,8 +10,10 @@\n       window.scrollTo(0, 0);\n     });\n   }\n \n+}\n+async scrollup() {\n     // Scroll down the page by the height of the viewport\n     await page.evaluate(() => {\n       window.scrollBy(0, window.innerHeight);\n     });\n"
+                },
+                {
+                    "date": 1686679449298,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -11,9 +11,9 @@\n     });\n   }\n \n }\n-async scrollup() {\n+async scrollDown() {\n     // Scroll down the page by the height of the viewport\n     await page.evaluate(() => {\n       window.scrollBy(0, window.innerHeight);\n     });\n"
+                },
+                {
+                    "date": 1686679457391,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,9 +4,9 @@\n   async wait(time) {\n     await page.waitForTimeout(time); //wait\n \n   }\n-  async scrollup() {\n+  async scrollUp() {\n     await page.evaluate(() => {\n       window.scrollTo(0, 0);\n     });\n   }\n@@ -17,5 +17,6 @@\n     await page.evaluate(() => {\n       window.scrollBy(0, window.innerHeight);\n     });\n \n+}\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1686679465116,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -10,9 +10,9 @@\n       window.scrollTo(0, 0);\n     });\n   }\n \n-}\n+\n async scrollDown() {\n     // Scroll down the page by the height of the viewport\n     await page.evaluate(() => {\n       window.scrollBy(0, window.innerHeight);\n"
+                },
+                {
+                    "date": 1686679909923,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -17,6 +17,9 @@\n     await page.evaluate(() => {\n       window.scrollBy(0, window.innerHeight);\n     });\n \n+\n+\n+    \n }\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1686679917193,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -17,9 +17,10 @@\n     await page.evaluate(() => {\n       window.scrollBy(0, window.innerHeight);\n     });\n \n+    async scrollDown() {\n+    // Wait for page to be loaded\n+    await page.waitForNavigation({ waitUntil: 'networkidle0' });\n \n-\n-    \n }\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1686679936949,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -17,10 +17,10 @@\n     await page.evaluate(() => {\n       window.scrollBy(0, window.innerHeight);\n     });\n \n-    async scrollDown() {\n+    async Load() {\n     // Wait for page to be loaded\n     await page.waitForNavigation({ waitUntil: 'networkidle0' });\n-\n+  });\n }\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1686679943617,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -17,9 +17,9 @@\n     await page.evaluate(() => {\n       window.scrollBy(0, window.innerHeight);\n     });\n \n-    async Load() {\n+    async waitLoadPage() {\n     // Wait for page to be loaded\n     await page.waitForNavigation({ waitUntil: 'networkidle0' });\n   });\n }\n"
+                },
+                {
+                    "date": 1686679955962,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,26 @@\n+\n+export default class Base {\n+\n+  async wait(time) {\n+    await page.waitForTimeout(time); //wait\n+\n+  }\n+  async scrollUp() {\n+    await page.evaluate(() => {\n+      window.scrollTo(0, 0);\n+    });\n+  }\n+\n+\n+async scrollDown() {\n+    // Scroll down the page by the height of the viewport\n+    await page.evaluate(() => {\n+      window.scrollBy(0, window.innerHeight);\n+    });\n+\n+    async waitTillLoadPage() {\n+    // Wait for page to be loaded\n+    await page.waitForNavigation({ waitUntil: 'networkidle0' });\n+  });\n+\n+}\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1686679961846,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -20,33 +20,7 @@\n \n     async waitTillLoadPage() {\n     // Wait for page to be loaded\n     await page.waitForNavigation({ waitUntil: 'networkidle0' });\n-  });\n+  };\n \n-}\n-\n-export default class Base {\n-\n-  async wait(time) {\n-    await page.waitForTimeout(time); //wait\n-\n-  }\n-  async scrollUp() {\n-    await page.evaluate(() => {\n-      window.scrollTo(0, 0);\n-    });\n-  }\n-\n-\n-async scrollDown() {\n-    // Scroll down the page by the height of the viewport\n-    await page.evaluate(() => {\n-      window.scrollBy(0, window.innerHeight);\n-    });\n-\n-    async waitLoadPage() {\n-    // Wait for page to be loaded\n-    await page.waitForNavigation({ waitUntil: 'networkidle0' });\n-  });\n-}\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1686679969675,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -17,10 +17,10 @@\n     await page.evaluate(() => {\n       window.scrollBy(0, window.innerHeight);\n     });\n \n-    async waitTillLoadPage() {\n+    async scrollDown() {\n     // Wait for page to be loaded\n     await page.waitForNavigation({ waitUntil: 'networkidle0' });\n-  };\n-\n+  });\n+}\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1686679976766,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -17,9 +17,9 @@\n     await page.evaluate(() => {\n       window.scrollBy(0, window.innerHeight);\n     });\n \n-    async scrollDown() {\n+    async LoadPage() {\n     // Wait for page to be loaded\n     await page.waitForNavigation({ waitUntil: 'networkidle0' });\n   });\n }\n"
+                },
+                {
+                    "date": 1686679986859,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -16,9 +16,9 @@\n     // Scroll down the page by the height of the viewport\n     await page.evaluate(() => {\n       window.scrollBy(0, window.innerHeight);\n     });\n-\n+  }\n     async LoadPage() {\n     // Wait for page to be loaded\n     await page.waitForNavigation({ waitUntil: 'networkidle0' });\n   });\n"
+                },
+                {
+                    "date": 1686679996802,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -20,7 +20,7 @@\n   }\n     async LoadPage() {\n     // Wait for page to be loaded\n     await page.waitForNavigation({ waitUntil: 'networkidle0' });\n-  });\n-}\n+  };\n+\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1686680011759,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -17,10 +17,10 @@\n     await page.evaluate(() => {\n       window.scrollBy(0, window.innerHeight);\n     });\n   }\n-    async LoadPage() {\n+    async waitTillLoadPage() {\n     // Wait for page to be loaded\n     await page.waitForNavigation({ waitUntil: 'networkidle0' });\n-  };\n+  }\n \n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1686680112945,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -21,6 +21,9 @@\n     async waitTillLoadPage() {\n     // Wait for page to be loaded\n     await page.waitForNavigation({ waitUntil: 'networkidle0' });\n   }\n-\n+  async waitTillLoadPage() {\n+    // Wait for page to be loaded\n+    await page.waitForNavigation({ waitUntil: 'networkidle0' });\n+  }\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1686680120758,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -21,9 +21,9 @@\n     async waitTillLoadPage() {\n     // Wait for page to be loaded\n     await page.waitForNavigation({ waitUntil: 'networkidle0' });\n   }\n-  async waitTillLoadPage() {\n+  async GetText(element) {\n     // Wait for page to be loaded\n     await page.waitForNavigation({ waitUntil: 'networkidle0' });\n   }\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1686680140226,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -21,9 +21,10 @@\n     async waitTillLoadPage() {\n     // Wait for page to be loaded\n     await page.waitForNavigation({ waitUntil: 'networkidle0' });\n   }\n-  async GetText(element) {\n-    // Wait for page to be loaded\n-    await page.waitForNavigation({ waitUntil: 'networkidle0' });\n-  }\n+  async GetText(e) {\n+    await page.evaluate(\n+      (priceElement) => priceElement.textContent,\n+      priceElement\n+    );\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1686680154336,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -23,8 +23,8 @@\n     await page.waitForNavigation({ waitUntil: 'networkidle0' });\n   }\n   async GetText(e) {\n     await page.evaluate(\n-      (priceElement) => priceElement.textContent,\n+      (e) => e.textContent,\n       priceElement\n     );\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1686680164984,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -24,7 +24,7 @@\n   }\n   async GetText(e) {\n     await page.evaluate(\n       (e) => e.textContent,\n-      priceElement\n+      e\n     );\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1686680178363,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -24,7 +24,6 @@\n   }\n   async GetText(e) {\n     await page.evaluate(\n       (e) => e.textContent,\n-      e\n-    );\n+      e );\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1686680183974,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -23,7 +23,6 @@\n     await page.waitForNavigation({ waitUntil: 'networkidle0' });\n   }\n   async GetText(e) {\n     await page.evaluate(\n-      (e) => e.textContent,\n-      e );\n+      (e) => e.textContent , e );\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1686680189905,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -24,5 +24,5 @@\n   }\n   async GetText(e) {\n     await page.evaluate(\n       (e) => e.textContent , e );\n-}\n\\ No newline at end of file\n+}\n"
+                },
+                {
+                    "date": 1686680212358,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -22,7 +22,8 @@\n     // Wait for page to be loaded\n     await page.waitForNavigation({ waitUntil: 'networkidle0' });\n   }\n   async GetText(e) {\n-    await page.evaluate(\n+   return await page.evaluate(\n       (e) => e.textContent , e );\n }\n+}\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1686680221111,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,28 @@\n+\n+export default class Base {\n+\n+  async wait(time) {\n+    await page.waitForTimeout(time); //wait\n+\n+  }\n+  async scrollUp() {\n+    await page.evaluate(() => {\n+      window.scrollTo(0, 0);\n+    });\n+  }\n+\n+\n+async scrollDown() {\n+    // Scroll down the page by the height of the viewport\n+    await page.evaluate(() => {\n+      window.scrollBy(0, window.innerHeight);\n+    });\n+  }\n+    async waitTillLoadPage() {\n+    // Wait for page to be loaded\n+    await page.waitForNavigation({ waitUntil: 'networkidle0' });\n+  }\n+  async GetText(e) {\n+   return await page.evaluate( (e) => e.textContent , e );\n+}\n+}\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1686680697636,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,34 @@\n+\n+export default class Base {\n+\n+  async wait(time) {\n+    await page.waitForTimeout(time); //wait\n+\n+  }\n+  async scrollUp() {\n+    await page.evaluate(() => {\n+      window.scrollTo(0, 0);\n+    });\n+  }\n+\n+\n+async scrollDown() {\n+    // Scroll down the page by the height of the viewport\n+    await page.evaluate(() => {\n+      window.scrollBy(0, window.innerHeight);\n+    });\n+  }\n+    async waitTillLoadPage() {\n+    // Wait for page to be loaded\n+    await page.waitForNavigation({ waitUntil: 'networkidle0' });\n+  }\n+  async GetText(e) {\n+   return await page.evaluate( (e) => e.textContent , e );\n+}\n+}\n+\n+\n+const price = await page.evaluate(\n+  (priceElement) => priceElement.textContent,\n+  priceElement\n+); // get price in text\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1686680759866,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -27,65 +27,4 @@\n }\n }\n \n \n-const price = await page.evaluate(\n-  (priceElement) => priceElement.textContent,\n-  priceElement\n-); // get price in text\n-\n-export default class Base {\n-\n-  async wait(time) {\n-    await page.waitForTimeout(time); //wait\n-\n-  }\n-  async scrollUp() {\n-    await page.evaluate(() => {\n-      window.scrollTo(0, 0);\n-    });\n-  }\n-\n-\n-async scrollDown() {\n-    // Scroll down the page by the height of the viewport\n-    await page.evaluate(() => {\n-      window.scrollBy(0, window.innerHeight);\n-    });\n-  }\n-    async waitTillLoadPage() {\n-    // Wait for page to be loaded\n-    await page.waitForNavigation({ waitUntil: 'networkidle0' });\n-  }\n-  async GetText(e) {\n-   return await page.evaluate( (e) => e.textContent , e );\n-}\n-}\n-\n-export default class Base {\n-\n-  async wait(time) {\n-    await page.waitForTimeout(time); //wait\n-\n-  }\n-  async scrollUp() {\n-    await page.evaluate(() => {\n-      window.scrollTo(0, 0);\n-    });\n-  }\n-\n-\n-async scrollDown() {\n-    // Scroll down the page by the height of the viewport\n-    await page.evaluate(() => {\n-      window.scrollBy(0, window.innerHeight);\n-    });\n-  }\n-    async waitTillLoadPage() {\n-    // Wait for page to be loaded\n-    await page.waitForNavigation({ waitUntil: 'networkidle0' });\n-  }\n-  async GetText(e) {\n-   return await page.evaluate(\n-      (e) => e.textContent , e );\n-}\n-}\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1686680768008,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -23,8 +23,13 @@\n     await page.waitForNavigation({ waitUntil: 'networkidle0' });\n   }\n   async GetText(e) {\n    return await page.evaluate( (e) => e.textContent , e );\n+   const price = await page.evaluate(\n+    (priceElement) => priceElement.textContent,\n+    priceElement\n+  ); // get price in text\n+  return pr\n }\n }\n \n \n"
+                },
+                {
+                    "date": 1686680774926,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,35 @@\n+\n+export default class Base {\n+\n+  async wait(time) {\n+    await page.waitForTimeout(time); //wait\n+\n+  }\n+  async scrollUp() {\n+    await page.evaluate(() => {\n+      window.scrollTo(0, 0);\n+    });\n+  }\n+\n+\n+async scrollDown() {\n+    // Scroll down the page by the height of the viewport\n+    await page.evaluate(() => {\n+      window.scrollBy(0, window.innerHeight);\n+    });\n+  }\n+    async waitTillLoadPage() {\n+    // Wait for page to be loaded\n+    await page.waitForNavigation({ waitUntil: 'networkidle0' });\n+  }\n+  async GetText(e) {\n+ //  return await page.evaluate( (e) => e.textContent , e );\n+   const price = await page.evaluate(\n+    (priceElement) => priceElement.textContent,\n+    priceElement\n+  ); // get price in text\n+  return price;\n+}\n+}\n+\n+\n"
+                },
+                {
+                    "date": 1686680781241,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,35 @@\n+\n+export default class Base {\n+\n+  async wait(time) {\n+    await page.waitForTimeout(time); //wait\n+\n+  }\n+  async scrollUp() {\n+    await page.evaluate(() => {\n+      window.scrollTo(0, 0);\n+    });\n+  }\n+\n+\n+async scrollDown() {\n+    // Scroll down the page by the height of the viewport\n+    await page.evaluate(() => {\n+      window.scrollBy(0, window.innerHeight);\n+    });\n+  }\n+    async waitTillLoadPage() {\n+    // Wait for page to be loaded\n+    await page.waitForNavigation({ waitUntil: 'networkidle0' });\n+  }\n+  async GetText(priceElement) {\n+ //  return await page.evaluate( (e) => e.textContent , e );\n+   const price = await page.evaluate(\n+    (priceElement) => priceElement.textContent,\n+    priceElement\n+  ); // get price in text\n+  return price;\n+}\n+}\n+\n+\n"
+                },
+                {
+                    "date": 1686681595609,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,35 @@\n+\n+export default class Base {\n+\n+  async wait(time) {\n+    await page.waitForTimeout(time); //wait\n+\n+  }\n+  async scrollUp() {\n+    await page.evaluate(() => {\n+      window.scrollTo(0, 0);\n+    });\n+  }\n+\n+\n+async scrollDown() {\n+    // Scroll down the page by the height of the viewport\n+    await page.evaluate(() => {\n+      window.scrollBy(0, window.innerHeight);\n+    });\n+  }\n+    async waitTillLoadPage() {\n+    // Wait for page to be loaded\n+    await page.waitForNavigation({ waitUntil: 'networkidle0' });\n+  }\n+  async GetText(page,priceElement) {\n+ //  return await page.evaluate( (e) => e.textContent , e );\n+   const price = await page.evaluate(\n+    (priceElement) => priceElement.textContent,\n+    priceElement\n+  ); // get price in text\n+  return price;\n+}\n+}\n+\n+\n"
+                },
+                {
+                    "date": 1686681738431,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -22,119 +22,15 @@\n     // Wait for page to be loaded\n     await page.waitForNavigation({ waitUntil: 'networkidle0' });\n   }\n   async GetText(page,priceElement) {\n- //  return await page.evaluate( (e) => e.textContent , e );\n-   const price = await page.evaluate(\n-    (priceElement) => priceElement.textContent,\n-    priceElement\n-  ); // get price in text\n-  return price;\n-}\n-}\n \n+// Find the element on the page\n+const element = await page.$('.my-selector');\n \n+// Get the text content of the element using evaluate()\n+const text = await page.evaluate(element => element.textContent, element);\n \n-export default class Base {\n-\n-  async wait(time) {\n-    await page.waitForTimeout(time); //wait\n-\n-  }\n-  async scrollUp() {\n-    await page.evaluate(() => {\n-      window.scrollTo(0, 0);\n-    });\n-  }\n-\n-\n-async scrollDown() {\n-    // Scroll down the page by the height of the viewport\n-    await page.evaluate(() => {\n-      window.scrollBy(0, window.innerHeight);\n-    });\n-  }\n-    async waitTillLoadPage() {\n-    // Wait for page to be loaded\n-    await page.waitForNavigation({ waitUntil: 'networkidle0' });\n-  }\n-  async GetText(priceElement) {\n- //  return await page.evaluate( (e) => e.textContent , e );\n-   const price = await page.evaluate(\n-    (priceElement) => priceElement.textContent,\n-    priceElement\n-  ); // get price in text\n-  return price;\n }\n }\n \n \n-\n-export default class Base {\n-\n-  async wait(time) {\n-    await page.waitForTimeout(time); //wait\n-\n-  }\n-  async scrollUp() {\n-    await page.evaluate(() => {\n-      window.scrollTo(0, 0);\n-    });\n-  }\n-\n-\n-async scrollDown() {\n-    // Scroll down the page by the height of the viewport\n-    await page.evaluate(() => {\n-      window.scrollBy(0, window.innerHeight);\n-    });\n-  }\n-    async waitTillLoadPage() {\n-    // Wait for page to be loaded\n-    await page.waitForNavigation({ waitUntil: 'networkidle0' });\n-  }\n-  async GetText(e) {\n- //  return await page.evaluate( (e) => e.textContent , e );\n-   const price = await page.evaluate(\n-    (priceElement) => priceElement.textContent,\n-    priceElement\n-  ); // get price in text\n-  return price;\n-}\n-}\n-\n-\n-\n-export default class Base {\n-\n-  async wait(time) {\n-    await page.waitForTimeout(time); //wait\n-\n-  }\n-  async scrollUp() {\n-    await page.evaluate(() => {\n-      window.scrollTo(0, 0);\n-    });\n-  }\n-\n-\n-async scrollDown() {\n-    // Scroll down the page by the height of the viewport\n-    await page.evaluate(() => {\n-      window.scrollBy(0, window.innerHeight);\n-    });\n-  }\n-    async waitTillLoadPage() {\n-    // Wait for page to be loaded\n-    await page.waitForNavigation({ waitUntil: 'networkidle0' });\n-  }\n-  async GetText(e) {\n-   return await page.evaluate( (e) => e.textContent , e );\n-   const price = await page.evaluate(\n-    (priceElement) => priceElement.textContent,\n-    priceElement\n-  ); // get price in text\n-  return pr\n-}\n-}\n-\n-\n"
+                },
+                {
+                    "date": 1686681743576,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -24,9 +24,9 @@\n   }\n   async GetText(page,priceElement) {\n \n // Find the element on the page\n-const element = await page.$('.my-selector');\n+const element = await page.$(priceElement);\n \n // Get the text content of the element using evaluate()\n const text = await page.evaluate(element => element.textContent, element);\n \n"
+                },
+                {
+                    "date": 1686681751226,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -27,9 +27,9 @@\n // Find the element on the page\n const element = await page.$(priceElement);\n \n // Get the text content of the element using evaluate()\n-const text = await page.evaluate(element => element.textContent, element);\n+return await page.evaluate(element => element.textContent, element);\n \n }\n }\n \n"
+                },
+                {
+                    "date": 1686681960433,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -21,9 +21,9 @@\n     async waitTillLoadPage() {\n     // Wait for page to be loaded\n     await page.waitForNavigation({ waitUntil: 'networkidle0' });\n   }\n-  async GetText(page,priceElement) {\n+  async GetText(priceElement) {\n \n // Find the element on the page\n const element = await page.$(priceElement);\n \n"
+                },
+                {
+                    "date": 1686682112557,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -21,9 +21,9 @@\n     async waitTillLoadPage() {\n     // Wait for page to be loaded\n     await page.waitForNavigation({ waitUntil: 'networkidle0' });\n   }\n-  async GetText(priceElement) {\n+  async GetText(page,priceElement) {\n \n // Find the element on the page\n const element = await page.$(priceElement);\n \n"
+                },
+                {
+                    "date": 1686682287759,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -21,16 +21,11 @@\n     async waitTillLoadPage() {\n     // Wait for page to be loaded\n     await page.waitForNavigation({ waitUntil: 'networkidle0' });\n   }\n-  async GetText(page,priceElement) {\n-\n-// Find the element on the page\n-const element = await page.$(priceElement);\n-\n-// Get the text content of the element using evaluate()\n-return await page.evaluate(element => element.textContent, element);\n-\n+  async getTextFromElement(selector: string): Promise<string> {\n+    const element = await page.$(selector);\n+    return element.textContent();\n+  }\n }\n-}\n \n \n"
+                },
+                {
+                    "date": 1686682439126,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -21,11 +21,16 @@\n     async waitTillLoadPage() {\n     // Wait for page to be loaded\n     await page.waitForNavigation({ waitUntil: 'networkidle0' });\n   }\n-  async getTextFromElement(selector: string): Promise<string> {\n-    const element = await page.$(selector);\n-    return element.textContent();\n-  }\n+  async GetText(page,priceElement) {\n+\n+// Find the element on the page\n+const element = await page.$(priceElement);\n+\n+// Get the text content of the element using evaluate()\n+return await page.evaluate(element => element.textContent, element);\n+\n }\n+}\n \n \n"
+                },
+                {
+                    "date": 1686682445807,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -23,14 +23,11 @@\n     await page.waitForNavigation({ waitUntil: 'networkidle0' });\n   }\n   async GetText(page,priceElement) {\n \n-// Find the element on the page\n-const element = await page.$(priceElement);\n+    const welcomeMessage = await page.$('#welcome-message');\n+    const textContent = await page.evaluate(element => element.textContent, welcomeMessage);\n \n-// Get the text content of the element using evaluate()\n-return await page.evaluate(element => element.textContent, element);\n-\n }\n }\n \n \n"
+                },
+                {
+                    "date": 1686682451742,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -21,9 +21,9 @@\n     async waitTillLoadPage() {\n     // Wait for page to be loaded\n     await page.waitForNavigation({ waitUntil: 'networkidle0' });\n   }\n-  async GetText(page,priceElement) {\n+  async GetText(page,e) {\n \n     const welcomeMessage = await page.$('#welcome-message');\n     const textContent = await page.evaluate(element => element.textContent, welcomeMessage);\n \n"
+                },
+                {
+                    "date": 1686682457690,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -21,9 +21,9 @@\n     async waitTillLoadPage() {\n     // Wait for page to be loaded\n     await page.waitForNavigation({ waitUntil: 'networkidle0' });\n   }\n-  async GetText(page,e) {\n+  async GetText(page,css) {\n \n     const welcomeMessage = await page.$('#welcome-message');\n     const textContent = await page.evaluate(element => element.textContent, welcomeMessage);\n \n"
+                },
+                {
+                    "date": 1686682473156,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -23,10 +23,10 @@\n     await page.waitForNavigation({ waitUntil: 'networkidle0' });\n   }\n   async GetText(page,css) {\n \n-    const welcomeMessage = await page.$('#welcome-message');\n-    const textContent = await page.evaluate(element => element.textContent, welcomeMessage);\n+    const welcomeMessage = await page.$(css);\n+    return await page.evaluate(element => element.textContent, welcomeMessage);\n \n }\n }\n \n"
+                },
+                {
+                    "date": 1686682479931,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -21,9 +21,9 @@\n     async waitTillLoadPage() {\n     // Wait for page to be loaded\n     await page.waitForNavigation({ waitUntil: 'networkidle0' });\n   }\n-  async GetText(page,css) {\n+  async GetText(css) {\n \n     const welcomeMessage = await page.$(css);\n     return await page.evaluate(element => element.textContent, welcomeMessage);\n \n"
+                },
+                {
+                    "date": 1686682528209,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -21,9 +21,9 @@\n     async waitTillLoadPage() {\n     // Wait for page to be loaded\n     await page.waitForNavigation({ waitUntil: 'networkidle0' });\n   }\n-  async GetText(css) {\n+  async getText(css) {\n \n     const welcomeMessage = await page.$(css);\n     return await page.evaluate(element => element.textContent, welcomeMessage);\n \n"
+                },
+                {
+                    "date": 1686686524957,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -24,9 +24,9 @@\n   }\n   async getText(css) {\n \n     const welcomeMessage = await page.$(css);\n-    return await page.evaluate(element => element.textContent, welcomeMessage);\n+    return  page.evaluate(element => element.textContent, welcomeMessage);\n \n }\n }\n \n"
+                },
+                {
+                    "date": 1686686786347,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,33 @@\n+\n+export default class Base {\n+\n+  async wait(time) {\n+    await page.waitForTimeout(time); //wait\n+\n+  }\n+  async scrollUp() {\n+    await page.evaluate(() => {\n+      window.scrollTo(0, 0);\n+    });\n+  }\n+\n+\n+async scrollDown() {\n+    // Scroll down the page by the height of the viewport\n+    await page.evaluate(() => {\n+      window.scrollBy(0, window.innerHeight);\n+    });\n+  }\n+    async waitTillLoadPage() {\n+    // Wait for page to be loaded\n+    await page.waitForNavigation({ waitUntil: 'networkidle0' });\n+  }\n+  async GetText(css) {\n+\n+    const welcomeMessage = await page.$(css);\n+    return await page.evaluate(element => element.textContent, welcomeMessage);\n+\n+}\n+}\n+\n+\n"
+                },
+                {
+                    "date": 1686686794503,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -21,41 +21,8 @@\n     async waitTillLoadPage() {\n     // Wait for page to be loaded\n     await page.waitForNavigation({ waitUntil: 'networkidle0' });\n   }\n-  async GetText(css) {\n-\n-    const welcomeMessage = await page.$(css);\n-    return await page.evaluate(element => element.textContent, welcomeMessage);\n-\n-}\n-}\n-\n-\n-\n-export default class Base {\n-\n-  async wait(time) {\n-    await page.waitForTimeout(time); //wait\n-\n-  }\n-  async scrollUp() {\n-    await page.evaluate(() => {\n-      window.scrollTo(0, 0);\n-    });\n-  }\n-\n-\n-async scrollDown() {\n-    // Scroll down the page by the height of the viewport\n-    await page.evaluate(() => {\n-      window.scrollBy(0, window.innerHeight);\n-    });\n-  }\n-    async waitTillLoadPage() {\n-    // Wait for page to be loaded\n-    await page.waitForNavigation({ waitUntil: 'networkidle0' });\n-  }\n   async getText(css) {\n \n     const welcomeMessage = await page.$(css);\n     return  page.evaluate(element => element.textContent, welcomeMessage);\n"
+                },
+                {
+                    "date": 1686687020747,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -19,14 +19,14 @@\n     });\n   }\n     async waitTillLoadPage() {\n     // Wait for page to be loaded\n-    await page.waitForNavigation({ waitUntil: 'networkidle0' });\n+    await waitForNavigation({ waitUntil: 'networkidle0' });\n   }\n   async getText(css) {\n \n     const welcomeMessage = await page.$(css);\n-    return  page.evaluate(element => element.textContent, welcomeMessage);\n+    return await page.evaluate(element => element.textContent, welcomeMessage);\n \n }\n }\n \n"
+                },
+                {
+                    "date": 1686687028910,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -19,9 +19,9 @@\n     });\n   }\n     async waitTillLoadPage() {\n     // Wait for page to be loaded\n-    await waitForNavigation({ waitUntil: 'networkidle0' });\n+    await page.waitForNavigation({ waitUntil: 'networkidle0' });\n   }\n   async getText(css) {\n \n     const welcomeMessage = await page.$(css);\n"
+                },
+                {
+                    "date": 1686687035256,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -21,9 +21,9 @@\n     async waitTillLoadPage() {\n     // Wait for page to be loaded\n     await page.waitForNavigation({ waitUntil: 'networkidle0' });\n   }\n-  async getText(css) {\n+  async getText(p,css) {\n \n     const welcomeMessage = await page.$(css);\n     return await page.evaluate(element => element.textContent, welcomeMessage);\n \n"
+                },
+                {
+                    "date": 1686687051020,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -23,9 +23,9 @@\n     await page.waitForNavigation({ waitUntil: 'networkidle0' });\n   }\n   async getText(p,css) {\n \n-    const welcomeMessage = await page.$(css);\n+    const welcomeMessage = await p.$(css);\n     return await page.evaluate(element => element.textContent, welcomeMessage);\n \n }\n }\n"
+                },
+                {
+                    "date": 1686689446302,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,30 @@\n+\n+export default class Base {\n+\n+  async wait(time) {\n+    await page.waitForTimeout(time); //wait\n+\n+  }\n+  async scrollUp() {\n+    await page.evaluate(() => {\n+      window.scrollTo(0, 0);\n+    });\n+  }\n+\n+\n+async scrollDown() {\n+    // Scroll down the page by the height of the viewport\n+    await page.evaluate(() => {\n+      window.scrollBy(0, window.innerHeight);\n+    });\n+  }\n+\n+  async getText(p,css) {\n+\n+    const welcomeMessage = await p.$(css);\n+    return await p.evaluate(element => element.textContent, welcomeMessage);\n+\n+}\n+}\n+\n+\n"
+                }
+            ],
+            "date": 1686679079489,
+            "name": "Commit-0",
+            "content": "import { randamnum, getNumberAfterComma } from '../config';\nlet totalprice = 0;\nlet Items = [];\nlet selected = [];\n\nexport default class CatPage {\n  //Fun select randam category\n  async selectRandamCat() {\n    const e = await page.$$(elements.regcatigories); //get array of categories webelements\n    const rand = randamnum(30); //get randam number\n    console.log('randam cataloge ' + rand); // display the randam number\n    await e[rand].click(); // open randam category\n  }\n\n  //Fun select randam Item\n  async selectRandamItem() {\n    await page.waitForTimeout(3000); //wait\n    \n    //loop 5 times\n    for (let i = 0; i < 5; i++) {\n\n      await page.waitForTimeout(3000); //wait\n\n      const products = await page.$$(\"a[href*='/artikel/']\"); //get all items in array of web of elements\n\n      const rand = randamnum(products.length); //get randam item\n      selected.push(rand);\n\n      //remove added tp fav item from list of products\n      if (i > 0) {\n        for (let j = 0; j < selected.length; j++) {\n          products.splice(selected[j], 1); //remove rand item from list of elemnts\n        }\n      }\n      console.log('Randam item number : ' + rand); // display rand item number\n\n      await products[rand].click(); // open rand item\n      await page.waitForSelector(elements.itemFav); // wait\n      await page.click(elements.itemFav); //add to wish list\n\n      const priceElement = await page.$(elements.price); //price element\n      const name1Element = await page.$(elements.ItemName1); //name1 element\n      //   const name2Element = await page.$(elements.ItemName2); //name2 element\n\n      const price = await page.evaluate(\n        (priceElement) => priceElement.textContent,\n        priceElement\n      ); // get price in text\n      const itemName1Text = await page.evaluate(\n        (name1Element) => name1Element.textContent,\n        name1Element\n      ); // get item name1 in text\n      //    const itemName2Text = await page.evaluate(name2Element => name2Element.textContent, name2Element);// get item name1 in text\n\n      const ItemName = itemName1Text; //+\" \"+ itemName2Text\n      console.log('Item : ' + ItemName + ' - price : ' + price); //display the price\n      totalprice = totalprice + getNumberAfterComma(price);\n      Items.push(ItemName); // add the ItemName to the Items array\n\n      await page.goBack();\n    }\n    console.log('Items: ' + Items);\n    await page.waitForTimeout(2000); //wait\n\n    console.log('Total Expected Price : ' + totalprice);\n    // Scroll to the top of the page\n    await page.evaluate(() => {\n      window.scrollTo(0, 0);\n    });\n    await page.waitForTimeout(3000); //wait\n    await page.click('.headerElement__icon--wishlist'); //open wish list\n  }\n  // get expected total price\n  getmail() {\n    return totalprice;\n  }\n}\n"
+        }
+    ]
+}
