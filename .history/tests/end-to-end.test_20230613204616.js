@@ -80,5 +80,5 @@ describe('Shopping  Test', () => {
   // Test case to Select randam Item
   it('Select Randam Item', async function () {
     await catPage.selectRandamItem();
-  });
+  })
 });

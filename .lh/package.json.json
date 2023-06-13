@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 6,
+            "activePatchIndex": 12,
             "patches": [
                 {
                     "date": 1686004474019,
@@ -32,6 +32,30 @@
                 {
                     "date": 1686362610306,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,9 +4,9 @@\n   \"description\": \"\",\n   \"main\": \"index.js\",\n   \"scripts\": {\n     \"test\": \"jest --forceExit\",\n-    \"test\": \"jest --forceExit --reporters=default --reporters=jest-html-reporters\"\n+    \"test:\": \"jest --forceExit --reporters=default --reporters=jest-html-reporters\"\n   },\n   \"keywords\": [],\n   \"author\": \"\",\n   \"license\": \"ISC\",\n"
+                },
+                {
+                    "date": 1686678321812,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,9 +4,9 @@\n   \"description\": \"\",\n   \"main\": \"index.js\",\n   \"scripts\": {\n     \"test\": \"jest --forceExit\",\n-    \"test:\": \"jest --forceExit --reporters=default --reporters=jest-html-reporters\"\n+    \"prettier\": \"prettier --write \\\"src/**/*.js\\\"\"\n   },\n   \"keywords\": [],\n   \"author\": \"\",\n   \"license\": \"ISC\",\n@@ -16,7 +16,8 @@\n     \"babel-jest\": \"^26.0.0\",\n     \"jest\": \"^26.0.0\",\n     \"jest-html-reporters\": \"^3.1.4\",\n     \"jest-puppeteer\": \"^5.0.0\",\n+    \"prettier\": \"^2.8.8\",\n     \"puppeteer\": \"^5.4.1\"\n   }\n }\n"
+                },
+                {
+                    "date": 1686678332195,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,9 +4,9 @@\n   \"description\": \"\",\n   \"main\": \"index.js\",\n   \"scripts\": {\n     \"test\": \"jest --forceExit\",\n-    \"prettier\": \"prettier --write \\\"src/**/*.js\\\"\"\n+    \"prettier\": \"prettier --write \\\"tests\\end-to-end.test.js\\\"\"\n   },\n   \"keywords\": [],\n   \"author\": \"\",\n   \"license\": \"ISC\",\n"
+                },
+                {
+                    "date": 1686678408971,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,9 +4,9 @@\n   \"description\": \"\",\n   \"main\": \"index.js\",\n   \"scripts\": {\n     \"test\": \"jest --forceExit\",\n-    \"prettier\": \"prettier --write \\\"tests\\end-to-end.test.js\\\"\"\n+    \"prettier\": \"prettier --write \\\"pages.js\\\"\"\n   },\n   \"keywords\": [],\n   \"author\": \"\",\n   \"license\": \"ISC\",\n"
+                },
+                {
+                    "date": 1686678415581,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,23 @@\n+{\n+  \"name\": \"jest-pptr-project\",\n+  \"version\": \"1.0.0\",\n+  \"description\": \"\",\n+  \"main\": \"index.js\",\n+  \"scripts\": {\n+    \"test\": \"jest --forceExit\",\n+    \"prettier\": \"prettier --write \\\"pages/.js\\\"\"\n+  },\n+  \"keywords\": [],\n+  \"author\": \"\",\n+  \"license\": \"ISC\",\n+  \"devDependencies\": {\n+    \"@babel/core\": \"^7.0.0\",\n+    \"@babel/preset-env\": \"^7.0.0\",\n+    \"babel-jest\": \"^26.0.0\",\n+    \"jest\": \"^26.0.0\",\n+    \"jest-html-reporters\": \"^3.1.4\",\n+    \"jest-puppeteer\": \"^5.0.0\",\n+    \"prettier\": \"^2.8.8\",\n+    \"puppeteer\": \"^5.4.1\"\n+  }\n+}\n"
+                },
+                {
+                    "date": 1686678458080,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,9 +4,9 @@\n   \"description\": \"\",\n   \"main\": \"index.js\",\n   \"scripts\": {\n     \"test\": \"jest --forceExit\",\n-    \"prettier\": \"prettier --write \\\"pages/.js\\\"\"\n+    \"prettier\": \"prettier --write \\\"config.js.js\\\"\"\n   },\n   \"keywords\": [],\n   \"author\": \"\",\n   \"license\": \"ISC\",\n@@ -20,27 +20,4 @@\n     \"prettier\": \"^2.8.8\",\n     \"puppeteer\": \"^5.4.1\"\n   }\n }\n-{\n-  \"name\": \"jest-pptr-project\",\n-  \"version\": \"1.0.0\",\n-  \"description\": \"\",\n-  \"main\": \"index.js\",\n-  \"scripts\": {\n-    \"test\": \"jest --forceExit\",\n-    \"prettier\": \"prettier --write \\\"pages.js\\\"\"\n-  },\n-  \"keywords\": [],\n-  \"author\": \"\",\n-  \"license\": \"ISC\",\n-  \"devDependencies\": {\n-    \"@babel/core\": \"^7.0.0\",\n-    \"@babel/preset-env\": \"^7.0.0\",\n-    \"babel-jest\": \"^26.0.0\",\n-    \"jest\": \"^26.0.0\",\n-    \"jest-html-reporters\": \"^3.1.4\",\n-    \"jest-puppeteer\": \"^5.0.0\",\n-    \"prettier\": \"^2.8.8\",\n-    \"puppeteer\": \"^5.4.1\"\n-  }\n-}\n"
+                },
+                {
+                    "date": 1686678474808,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,23 @@\n+{\n+  \"name\": \"jest-pptr-project\",\n+  \"version\": \"1.0.0\",\n+  \"description\": \"\",\n+  \"main\": \"index.js\",\n+  \"scripts\": {\n+    \"test\": \"jest --forceExit\",\n+    \"prettier\": \"prettier --write \\\"config.js\\\"\"\n+  },\n+  \"keywords\": [],\n+  \"author\": \"\",\n+  \"license\": \"ISC\",\n+  \"devDependencies\": {\n+    \"@babel/core\": \"^7.0.0\",\n+    \"@babel/preset-env\": \"^7.0.0\",\n+    \"babel-jest\": \"^26.0.0\",\n+    \"jest\": \"^26.0.0\",\n+    \"jest-html-reporters\": \"^3.1.4\",\n+    \"jest-puppeteer\": \"^5.0.0\",\n+    \"prettier\": \"^2.8.8\",\n+    \"puppeteer\": \"^5.4.1\"\n+  }\n+}\n"
                 }
             ],
             "date": 1686004474019,

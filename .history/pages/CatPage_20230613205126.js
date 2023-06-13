@@ -77,7 +77,8 @@ export default class CatPage {
     await page.evaluate(() => {
       window.scrollTo(0, 0);
     });
-    await page.waitForTimeout(3000); //wait
+    //  await page.click(elements.wishlist) //open wish list
+
     await page.click('.headerElement__icon--wishlist'); //open wish list
   }
   // get expected total price

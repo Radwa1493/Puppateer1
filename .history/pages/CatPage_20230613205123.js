@@ -25,8 +25,8 @@ export default class CatPage {
   //Fun select randam Item
   async selectRandamItem() {
     await page.waitForTimeout(3000); //wait
-    
-    //loop 5 times
+      //loop 5 times
+
     for (let i = 0; i < 5; i++) {
 
       await page.waitForTimeout(3000); //wait
@@ -77,7 +77,8 @@ export default class CatPage {
     await page.evaluate(() => {
       window.scrollTo(0, 0);
     });
-    await page.waitForTimeout(3000); //wait
+    //  await page.click(elements.wishlist) //open wish list
+
     await page.click('.headerElement__icon--wishlist'); //open wish list
   }
   // get expected total price
