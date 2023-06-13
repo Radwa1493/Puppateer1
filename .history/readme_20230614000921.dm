@@ -19,7 +19,7 @@ Project structure
         ├── ProfilePage.js
         ├── HomePage.js
         ├── CatPage.js
-        ├── Base.js
+        Base.js
 
 
 
