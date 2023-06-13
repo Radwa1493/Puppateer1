@@ -2,9 +2,9 @@ export default class Base {
   async wait(time) {
     await page.waitForTimeout(time); //wait
   }
-  async waitloadPage() {
-    await page.waitForNavigation({ waitUntil: 'networkidle0' });
-    }
+  async waitload(time) {
+    await page.waitForTimeout(time); //wait
+  }
   async scrollUp() {
     await page.evaluate(() => {
       window.scrollTo(0, 0);

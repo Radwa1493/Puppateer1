@@ -31,13 +31,13 @@ export default class HomePage extends Base {
   // fun open Category page
   async OpenCat() {
     // Wait for page to be loaded
-    await this.waitloadPage();
+    
     // Scroll down the page by the height of the viewport
     await this.scrollDown();
     // get all links in the age in array and click on cat link
     const e = await page.$$(elements.Homelinks);
     await e[9].click();
     // Wait for page to be loaded
-    await this.waitloadPage();
+    await page.waitForNavigation({ waitUntil: 'networkidle0' });
   }
 }

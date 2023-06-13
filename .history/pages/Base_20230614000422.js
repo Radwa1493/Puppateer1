@@ -3,8 +3,7 @@ export default class Base {
     await page.waitForTimeout(time); //wait
   }
   async waitloadPage() {
-    await page.waitForNavigation({ waitUntil: 'networkidle0' });
-    }
+    await page.waitForNavigation({ waitUntil: 'networkidle0' });  }
   async scrollUp() {
     await page.evaluate(() => {
       window.scrollTo(0, 0);

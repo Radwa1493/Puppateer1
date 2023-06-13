@@ -38,6 +38,6 @@ export default class HomePage extends Base {
     const e = await page.$$(elements.Homelinks);
     await e[9].click();
     // Wait for page to be loaded
-    await this.waitloadPage();
+    await page.waitForNavigation({ waitUntil: 'networkidle0' });
   }
 }

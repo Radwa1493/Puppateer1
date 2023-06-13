@@ -27,8 +27,8 @@ export default class CatPage extends Base {
 
   //Fun select randam Item
   async selectRandamItem() {
-      // Wait for page to be loaded
-      await this.waitloadPage();
+    //  await page.waitForTimeout(3000); //wait
+    await page.waitForNavigation({ waitUntil: 'networkidle0' });
     //loop 5 times
     for (let i = 0; i < 5; i++) {
       await this.wait(5000);
