@@ -1,4 +1,4 @@
-import { logoutUrl,registerUrl } from '../config';
+import { logoutUrl, registerUrl } from '../config';
 // Profile Page Locators
 const elements = {
   lgoin_Buttom: '.headerElement__icon--login',

@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "jest --forceExit",
-    "prettier": "prettier --write \"pages\""
+    "prettier": "prettier --write \"pages.js\""
   },
   "keywords": [],
   "author": "",

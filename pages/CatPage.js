@@ -27,13 +27,13 @@ export default class CatPage extends Base {
 
   //Fun select randam Item
   async selectRandamItem() {
-  //  await page.waitForTimeout(3000); //wait
-  await page.waitForNavigation({ waitUntil: 'networkidle0' });
-  //loop 5 times
-    for (let i = 0; i < 5; i++) {
-      await  this.wait(5000);
     //  await page.waitForTimeout(3000); //wait
-   // await page.waitForNavigation({ waitUntil: 'networkidle0' });
+    await page.waitForNavigation({ waitUntil: 'networkidle0' });
+    //loop 5 times
+    for (let i = 0; i < 5; i++) {
+      await this.wait(5000);
+      //  await page.waitForTimeout(3000); //wait
+      // await page.waitForNavigation({ waitUntil: 'networkidle0' });
       const products = await page.$$("a[href*='/artikel/']"); //get all items in array of web of elements
       const rand = randamnum(products.length); //get randam item
       selected.push(rand);
@@ -52,8 +52,8 @@ export default class CatPage extends Base {
 
       //   const name2Element = await page.$(elements.ItemName2); //name2 element
 
-      const price = await this.getText(page,elements.price); // get item price in text
-      const itemName1Text = await this.getText(page,elements.ItemName1); // get item name1 in text
+      const price = await this.getText(page, elements.price); // get item price in text
+      const itemName1Text = await this.getText(page, elements.ItemName1); // get item name1 in text
 
       //    const itemName2Text = await page.evaluate(name2Element => name2Element.textContent, name2Element);// get item name1 in text
 
@@ -68,13 +68,12 @@ export default class CatPage extends Base {
 
     console.log('Total Expected Price : ' + totalprice);
     await page.goto(wishUrl); // open WishList through the url
-  
-    //      await page.waitForNavigation({ waitUntil: 'networkidle0' });
-    //  this.scrollUp();  // Scroll to the top of the page 
-//  await page.waitForNavigation({ waitUntil: 'networkidle0' });
-//  await page.click('.headerElement__icon--wishlist'); //open wishlist
 
-}
+    //      await page.waitForNavigation({ waitUntil: 'networkidle0' });
+    //  this.scrollUp();  // Scroll to the top of the page
+    //  await page.waitForNavigation({ waitUntil: 'networkidle0' });
+    //  await page.click('.headerElement__icon--wishlist'); //open wishlist
+  }
   // get expected total price
   totalprice() {
     return totalprice;
