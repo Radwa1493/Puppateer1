@@ -4,7 +4,7 @@ export default class Base {
   }
   async waitloadPage() {
     await page.waitForNavigation({ waitUntil: 'networkidle0' });
-    }
+  }
   async scrollUp() {
     await page.evaluate(() => {
       window.scrollTo(0, 0);
@@ -21,5 +21,13 @@ export default class Base {
   async getText(p, css) {
     const welcomeMessage = await p.$(css);
     return await p.evaluate((element) => element.textContent, welcomeMessage);
+  }
+
+  async isElementDisplayed(selector) {
+    const isDisplayed = await page.evaluate((selector) => {
+      const element = document.querySelector(selector);
+      return element ? element.style.display !== 'none' : false;
+    }, selector);
+    return isDisplayed;
   }
 }

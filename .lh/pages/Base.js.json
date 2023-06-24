@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 66,
+            "activePatchIndex": 75,
             "patches": [
                 {
                     "date": 1686679079489,
@@ -272,6 +272,42 @@
                 {
                     "date": 1686690262220,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,11 +1,10 @@\n export default class Base {\n   async wait(time) {\n     await page.waitForTimeout(time); //wait\n   }\n-  async waitloadPage(time) {\n-    await page.waitForTimeout(time); //wait\n-  }\n+  async waitloadPage() {\n+    await page.waitForNavigation({ waitUntil: 'networkidle0' });  }\n   async scrollUp() {\n     await page.evaluate(() => {\n       window.scrollTo(0, 0);\n     });\n"
+                },
+                {
+                    "date": 1687601247464,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -2,9 +2,10 @@\n   async wait(time) {\n     await page.waitForTimeout(time); //wait\n   }\n   async waitloadPage() {\n-    await page.waitForNavigation({ waitUntil: 'networkidle0' });  }\n+    await page.waitForNavigation({ waitUntil: 'networkidle0' });\n+    }\n   async scrollUp() {\n     await page.evaluate(() => {\n       window.scrollTo(0, 0);\n     });\n@@ -20,5 +21,10 @@\n   async getText(p, css) {\n     const welcomeMessage = await p.$(css);\n     return await p.evaluate((element) => element.textContent, welcomeMessage);\n   }\n+\n+\n+\n+\n+  \n }\n"
+                },
+                {
+                    "date": 1687601253809,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -22,9 +22,12 @@\n     const welcomeMessage = await p.$(css);\n     return await p.evaluate((element) => element.textContent, welcomeMessage);\n   }\n \n+  async getText(p, css) {\n+    const welcomeMessage = await p.$(css);\n+    return await p.evaluate((element) => element.textContent, welcomeMessage);\n+  }\n \n \n \n-  \n }\n"
+                },
+                {
+                    "date": 1687601261305,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,33 @@\n+export default class Base {\n+  async wait(time) {\n+    await page.waitForTimeout(time); //wait\n+  }\n+  async waitloadPage() {\n+    await page.waitForNavigation({ waitUntil: 'networkidle0' });\n+    }\n+  async scrollUp() {\n+    await page.evaluate(() => {\n+      window.scrollTo(0, 0);\n+    });\n+  }\n+\n+  async scrollDown() {\n+    // Scroll down the page by the height of the viewport\n+    await page.evaluate(() => {\n+      window.scrollBy(0, window.innerHeight);\n+    });\n+  }\n+\n+  async getText(p, css) {\n+    const welcomeMessage = await p.$(css);\n+    return await p.evaluate((element) => element.textContent, welcomeMessage);\n+  }\n+\n+  async ifelemntDisplayed(p, css) {\n+    const welcomeMessage = await p.$(css);\n+    return await p.evaluate((element) => element.textContent, welcomeMessage);\n+  }\n+\n+\n+\n+}\n"
+                },
+                {
+                    "date": 1687601271102,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -22,45 +22,12 @@\n     const welcomeMessage = await p.$(css);\n     return await p.evaluate((element) => element.textContent, welcomeMessage);\n   }\n \n-  async ifelemntDisplayed(p, css) {\n+  async IfeDisplayed(p, css) {\n     const welcomeMessage = await p.$(css);\n     return await p.evaluate((element) => element.textContent, welcomeMessage);\n   }\n \n \n \n }\n-export default class Base {\n-  async wait(time) {\n-    await page.waitForTimeout(time); //wait\n-  }\n-  async waitloadPage() {\n-    await page.waitForNavigation({ waitUntil: 'networkidle0' });\n-    }\n-  async scrollUp() {\n-    await page.evaluate(() => {\n-      window.scrollTo(0, 0);\n-    });\n-  }\n-\n-  async scrollDown() {\n-    // Scroll down the page by the height of the viewport\n-    await page.evaluate(() => {\n-      window.scrollBy(0, window.innerHeight);\n-    });\n-  }\n-\n-  async getText(p, css) {\n-    const welcomeMessage = await p.$(css);\n-    return await p.evaluate((element) => element.textContent, welcomeMessage);\n-  }\n-\n-  async getText(p, css) {\n-    const welcomeMessage = await p.$(css);\n-    return await p.evaluate((element) => element.textContent, welcomeMessage);\n-  }\n-\n-\n-\n-}\n"
+                },
+                {
+                    "date": 1687601316844,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -22,11 +22,14 @@\n     const welcomeMessage = await p.$(css);\n     return await p.evaluate((element) => element.textContent, welcomeMessage);\n   }\n \n-  async IfeDisplayed(p, css) {\n-    const welcomeMessage = await p.$(css);\n-    return await p.evaluate((element) => element.textContent, welcomeMessage);\n+  async IfDisplayed(p, css) {\n+    await page.evaluate(() => {\n+      const element = document.querySelector('#my-element');\n+      return element ? element.style.display !== 'none' : false;\n+    });\n+  \n   }\n \n \n \n"
+                },
+                {
+                    "date": 1687601323328,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -22,9 +22,9 @@\n     const welcomeMessage = await p.$(css);\n     return await p.evaluate((element) => element.textContent, welcomeMessage);\n   }\n \n-  async IfDisplayed(p, css) {\n+  async IfDisplayed(e) {\n     await page.evaluate(() => {\n       const element = document.querySelector('#my-element');\n       return element ? element.style.display !== 'none' : false;\n     });\n"
+                },
+                {
+                    "date": 1687601330476,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -24,9 +24,9 @@\n   }\n \n   async IfDisplayed(e) {\n     await page.evaluate(() => {\n-      const element = document.querySelector('#my-element');\n+      const element = document.querySelector(e);\n       return element ? element.style.display !== 'none' : false;\n     });\n   \n   }\n"
+                },
+                {
+                    "date": 1687601411473,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -22,15 +22,14 @@\n     const welcomeMessage = await p.$(css);\n     return await p.evaluate((element) => element.textContent, welcomeMessage);\n   }\n \n-  async IfDisplayed(e) {\n-    await page.evaluate(() => {\n-      const element = document.querySelector(e);\n+  static async isElementDisplayed(page, selector) {\n+    const isDisplayed = await page.evaluate((selector) => {\n+      const element = document.querySelector(selector);\n       return element ? element.style.display !== 'none' : false;\n-    });\n-  \n+    }, selector);\n+    return isDisplayed;\n   }\n \n \n-\n }\n"
+                },
+                {
+                    "date": 1687601417263,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -22,9 +22,9 @@\n     const welcomeMessage = await p.$(css);\n     return await p.evaluate((element) => element.textContent, welcomeMessage);\n   }\n \n-  static async isElementDisplayed(page, selector) {\n+   async isElementDisplayed(, selector) {\n     const isDisplayed = await page.evaluate((selector) => {\n       const element = document.querySelector(selector);\n       return element ? element.style.display !== 'none' : false;\n     }, selector);\n"
                 }
             ],
             "date": 1686679079489,
