@@ -29,7 +29,11 @@ beforeAll(async () => {
   await homePage.isHomePageDisplayed(); //wait till cookies displayed
   await homePage.CloseCookies(); //close cookies
 });
+afterAll(async () => {
+  await page.screenshot({path: 'ScreenShot/Cart1.png'}) 
+  await page.pdf({path: 'ScreenShot/Cart1.pdf', format: 'A4'});
 
+})
 // Test suite for user Registration
 describe('Registration Test', () => {
   // Test case for Open Profile Page
@@ -110,6 +114,3 @@ describe('Shopping  Test', () => {
     }
 });
 });
-afterAll(async () => {
-  await page.screenshot({path: 'ScreenShot/Cart.png'}) 
-})

@@ -44,7 +44,7 @@ Project structure
         ├── HomePage.js
         ├── CatPage.js
         ├── Base.js
-    ├── ScreenShot
+    ├── pagScreenShotes
 
 
 
@@ -54,8 +54,6 @@ in (jest-puppeteer.config) to false -> 	headless: false
 Run Project 
     Run in Terminal : npm run test
     After run report created in ->  html-reports\jest_html_reporters.html 
-    After run ScreenShot created in ->  ScreenShot\cart.png  /\ScreenShot\cart.pdf
-
 
 Run on docker 
     1)open docker desktop

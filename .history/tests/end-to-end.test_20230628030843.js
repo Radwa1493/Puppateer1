@@ -110,6 +110,8 @@ describe('Shopping  Test', () => {
     }
 });
 });
-afterAll(async () => {
-  await page.screenshot({path: 'ScreenShot/Cart.png'}) 
+AfteAll(async () => {
+  await page.screenshot({path: 'ScreenShot/Cart1.png'}) 
+  await page.pdf({path: 'ScreenShot/Cart1.pdf', format: 'A4'});
+
 })

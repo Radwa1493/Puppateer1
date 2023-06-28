@@ -110,6 +110,3 @@ describe('Shopping  Test', () => {
     }
 });
 });
-afterAll(async () => {
-  await page.screenshot({path: 'ScreenShot/Cart.png'}) 
-})

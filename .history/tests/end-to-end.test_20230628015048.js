@@ -35,12 +35,12 @@ describe('Registration Test', () => {
   // Test case for Open Profile Page
   it('Open Profile Page', async () => {
     await homePage.OpenProfile(); //open profile page
-    await profilePage.isLoginPageDisplayed(); //check used logedin
+    await profilePage.isLoginPageDisplayed(); //wait for logedin element
   });
   // Test case for Open Registration Page
   it('Open Registration Page', async () => {
     await profilePage.openRegisterPage(); //open Registration page
-    await registionPage.isRegisterPageDisplayed(); //check Registration page opened
+    await registionPage.isRegisterPageDisplayed(); //wait Registration page opened
   });
   // Test case fill Registration Page and create new user
   it('Fill New user data', async function () {
@@ -110,6 +110,3 @@ describe('Shopping  Test', () => {
     }
 });
 });
-afterAll(async () => {
-  await page.screenshot({path: 'ScreenShot/Cart.png'}) 
-})

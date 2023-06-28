@@ -108,8 +108,11 @@ describe('Shopping  Test', () => {
       expect(cartPage.GetAcualitems()[c]).toEqual(catPage.Getexpecteditems()[c])
     
     }
+    await page.screenshot({path: 'Cart.png'})
 });
 });
-afterAll(async () => {
-  await page.screenshot({path: 'ScreenShot/Cart.png'}) 
+beforeAll(async () => {
+
+
+
 })

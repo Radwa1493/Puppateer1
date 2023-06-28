@@ -4,6 +4,8 @@ const actualitemslist = [];
 
 // Category Page Locators
 const elements = {
+  //integer: '.cartOverview__summaryContainer:nth-child(1) #totalPrice .articlePrice__integer',
+  //fraction: '.cartOverview__summaryContainer:nth-child(1) #totalPrice .articlePrice__fraction--dash',
   CartP: '.cartOverview__summaryContainer:nth-child(1) #totalPrice div',
   shipping:
     '.cartOverview__summaryContainer--desktop .summaryBox__line:nth-child(2) .articlePrice',
@@ -21,19 +23,19 @@ export default class CartPage extends Base {
     const Exprice = await this.getText(page, elements.CartP); // get item price in text
     let CartPrice = parseFloat(
       Exprice.replace('.', '').replace(',', '.').replace(/-/, '')
-    ); //formate the price 
+    );
 
     console.log('Cart Price: ' + CartPrice);
 
     const shipping = await this.getText(page, elements.shipping); // get  shipping in text
-    const shipping1 = parseFloat(shipping.replace(',', '.'));//formate the price 
+    const shipping1 = parseFloat(shipping.replace(',', '.'));
     console.log('Shipping: ' + shipping1);
 
     // get discount price if exist
     let discount1 = 0.0;
     if (await this.isElementDisplayed(elements.discount)) {
       const discount = await this.getText(page, elements.discount); // get  discount in text
-      discount1 = parseFloat(discount.replace(/-/g, '').replace(',', '.'));//formate the price 
+      discount1 = parseFloat(discount.replace(/-/g, '').replace(',', '.'));
       console.log('Discount: ' + discount1);
     }
     // caluculate total expected price

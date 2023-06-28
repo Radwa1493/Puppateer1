@@ -4,6 +4,8 @@ const actualitemslist = [];
 
 // Category Page Locators
 const elements = {
+  //integer: '.cartOverview__summaryContainer:nth-child(1) #totalPrice .articlePrice__integer',
+  //fraction: '.cartOverview__summaryContainer:nth-child(1) #totalPrice .articlePrice__fraction--dash',
   CartP: '.cartOverview__summaryContainer:nth-child(1) #totalPrice div',
   shipping:
     '.cartOverview__summaryContainer--desktop .summaryBox__line:nth-child(2) .articlePrice',

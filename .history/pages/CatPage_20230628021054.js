@@ -69,10 +69,11 @@ export default class CatPage extends Base {
         await this.wait(7000); // wait
         await page.click('.button--outOfStock'); // add to cart
       }
+      const ItemName = itemName1Text; //+" "+ itemName1Text
       console.log('Item : ' + itemName1Text + ' - price : ' + price); //display the price
       totalprice =
         totalprice +
-        parseFloat(price.replace('.', '').replace(',', '.').replace(/-/, ''));//formate the price 
+        parseFloat(price.replace('.', '').replace(',', '.').replace(/-/, ''));
       Items.push(itemName1Text); // add the ItemName to the Items array
 
       await page.goBack();

@@ -43,7 +43,7 @@ export default class CatPage extends Base {
 
       //remove added tp fav item from list of products
       if (i > 0) {
-        for (let j = 0; j < selected.length-1; j++) {
+        for (let j = 0; j < selected.length; j++) {
           products.splice(selected[j], 1); //remove rand item from list of elemnts
         }
       }
@@ -69,11 +69,12 @@ export default class CatPage extends Base {
         await this.wait(7000); // wait
         await page.click('.button--outOfStock'); // add to cart
       }
-      console.log('Item : ' + itemName1Text + ' - price : ' + price); //display the price
+      const ItemName = itemName1Text; //+" "+ itemName1Text
+      console.log('Item : ' + ItemName + ' - price : ' + price); //display the price
       totalprice =
         totalprice +
-        parseFloat(price.replace('.', '').replace(',', '.').replace(/-/, ''));//formate the price 
-      Items.push(itemName1Text); // add the ItemName to the Items array
+        parseFloat(price.replace('.', '').replace(',', '.').replace(/-/, ''));
+      Items.push(ItemName); // add the ItemName to the Items array
 
       await page.goBack();
     }

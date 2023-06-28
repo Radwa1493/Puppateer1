@@ -41,12 +41,6 @@ export default class CatPage extends Base {
       const rand = randamnum(products.length); //get randam item
       selected.push(rand);
 
-      //remove added tp fav item from list of products
-      if (i > 0) {
-        for (let j = 0; j < selected.length-1; j++) {
-          products.splice(selected[j], 1); //remove rand item from list of elemnts
-        }
-      }
       console.log('Randam item number : ' + rand); // display rand item number
       await this.wait(3000); // wait
       await products[rand].click(); // open rand item
@@ -69,11 +63,19 @@ export default class CatPage extends Base {
         await this.wait(7000); // wait
         await page.click('.button--outOfStock'); // add to cart
       }
-      console.log('Item : ' + itemName1Text + ' - price : ' + price); //display the price
+      const ItemName = itemName1Text; //+" "+ itemName1Text
+      console.log('Item : ' + ItemName + ' - price : ' + price); //display the price
       totalprice =
         totalprice +
-        parseFloat(price.replace('.', '').replace(',', '.').replace(/-/, ''));//formate the price 
-      Items.push(itemName1Text); // add the ItemName to the Items array
+        parseFloat(price.replace('.', '').replace(',', '.').replace(/-/, ''));
+      Items.push(ItemName); // add the ItemName to the Items array
+     
+      //remove added tp fav item from list of products
+      if (i > 0) {
+        for (let j = 0; j < selected.length; j++) {
+          products.splice(selected[j], 1); //remove rand item from list of elemnts
+        }
+      }
 
       await page.goBack();
     }

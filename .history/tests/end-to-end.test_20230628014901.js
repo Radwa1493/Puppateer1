@@ -35,7 +35,7 @@ describe('Registration Test', () => {
   // Test case for Open Profile Page
   it('Open Profile Page', async () => {
     await homePage.OpenProfile(); //open profile page
-    await profilePage.isLoginPageDisplayed(); //check used logedin
+    await profilePage.isLoginPageDisplayed(); //wait for logedin
   });
   // Test case for Open Registration Page
   it('Open Registration Page', async () => {
@@ -110,6 +110,3 @@ describe('Shopping  Test', () => {
     }
 });
 });
-afterAll(async () => {
-  await page.screenshot({path: 'ScreenShot/Cart.png'}) 
-})
